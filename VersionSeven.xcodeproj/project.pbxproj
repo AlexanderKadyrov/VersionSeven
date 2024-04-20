@@ -17,6 +17,7 @@
 		1156A2682BD477FF0029DA44 /* RealtimeQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2672BD477FF0029DA44 /* RealtimeQuotesService.swift */; };
 		1156A26B2BD478320029DA44 /* RealtimeQuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* RealtimeQuotesRequest.swift */; };
 		1156A26D2BD4785C0029DA44 /* RealtimeQuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */; };
+		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1156A2672BD477FF0029DA44 /* RealtimeQuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesService.swift; sourceTree = "<group>"; };
 		1156A26A2BD478320029DA44 /* RealtimeQuotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesRequest.swift; sourceTree = "<group>"; };
 		1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesResponse.swift; sourceTree = "<group>"; };
+		1156A26F2BD479370029DA44 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +127,19 @@
 		1156A25E2BD44DDC0029DA44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1156A26E2BD478DA0029DA44 /* Codable */,
 				1156A2652BD477DC0029DA44 /* Services */,
-				1156A25F2BD44DE90029DA44 /* Client */,
+				1156A25F2BD44DE90029DA44 /* Clients */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		1156A25F2BD44DE90029DA44 /* Client */ = {
+		1156A25F2BD44DE90029DA44 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
 				1156A2602BD44E040029DA44 /* WebSocketClient.swift */,
 			);
-			path = Client;
+			path = Clients;
 			sourceTree = "<group>";
 		};
 		1156A2652BD477DC0029DA44 /* Services */ = {
@@ -155,6 +158,14 @@
 				1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */,
 			);
 			path = RealtimeQuotes;
+			sourceTree = "<group>";
+		};
+		1156A26E2BD478DA0029DA44 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				1156A26F2BD479370029DA44 /* List.swift */,
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			files = (
 				1156A2462BD448C60029DA44 /* HomeViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
+				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 				1156A2682BD477FF0029DA44 /* RealtimeQuotesService.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* RealtimeQuotesResponse.swift in Sources */,
