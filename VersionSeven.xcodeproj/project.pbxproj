@@ -11,6 +11,7 @@
 		1156A2462BD448C60029DA44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* HomeViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
 		1156A24E2BD448C80029DA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24C2BD448C80029DA44 /* LaunchScreen.storyboard */; };
+		1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A25C2BD44D7A0029DA44 /* Starscream */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +127,9 @@
 			dependencies = (
 			);
 			name = VersionSeven;
+			packageProductDependencies = (
+				1156A25C2BD44D7A0029DA44 /* Starscream */,
+			);
 			productName = VersionSeven;
 			productReference = 1156A23E2BD448C60029DA44 /* VersionSeven.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 1156A2352BD448C60029DA44;
+			packageReferences = (
+				1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 1156A23F2BD448C60029DA44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1156A25C2BD44D7A0029DA44 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1156A2362BD448C60029DA44 /* Project object */;
 }
