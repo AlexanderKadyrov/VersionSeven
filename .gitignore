@@ -1,0 +1,29 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Xcode temporary files #
+#########################
+DerivedData
+Build
+**/*.xcodeproj/xcuserdata/
+
+# CocoaPods #
+#############
+Pods
+Podfile.lock
+*.xcworkspace/
+
+# SPM #
+#############
+Package.resolved
+.swiftpm
+
+# BUILD #
+.build/
