@@ -12,6 +12,7 @@
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
 		1156A24E2BD448C80029DA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24C2BD448C80029DA44 /* LaunchScreen.storyboard */; };
 		1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A25C2BD44D7A0029DA44 /* Starscream */; };
+		1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2602BD44E040029DA44 /* WebSocketClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		1156A24A2BD448C80029DA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1156A24D2BD448C80029DA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1156A24F2BD448C80029DA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1156A2602BD44E040029DA44 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		1156A2562BD449E80029DA44 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1156A25E2BD44DDC0029DA44 /* Network */,
 				1156A2582BD44A390029DA44 /* ViewControllers */,
 				1156A2572BD449EF0029DA44 /* Main */,
 			);
@@ -109,6 +112,22 @@
 				1156A24A2BD448C80029DA44 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1156A25E2BD44DDC0029DA44 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1156A25F2BD44DE90029DA44 /* Client */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1156A25F2BD44DE90029DA44 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				1156A2602BD44E040029DA44 /* WebSocketClient.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +208,7 @@
 			files = (
 				1156A2462BD448C60029DA44 /* HomeViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
+				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
