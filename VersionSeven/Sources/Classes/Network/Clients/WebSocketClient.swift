@@ -1,17 +1,31 @@
 import Foundation
 import Starscream
 
+protocol WebSocketClientDelegate: AnyObject {
+    func didConnected()
+    func didDisconnected()
+    func didReceive(data: Data, client: WebSocketClient)
+    func didReceive(error: Error)
+}
+
 final class WebSocketClient {
+    
+    private weak var delegate: WebSocketClientDelegate?
     
     private let socket: WebSocket
     
-    init() {
-        var request = URLRequest(url: URL(string: "wss://wss.tradernet.com")!)
+    init?(url: URL?) {
+        guard let url = url else { return nil }
+        var request = URLRequest(url: url)
         request.timeoutInterval = 10
         socket = WebSocket(request: request)
     }
     
-    func subscribe() {
+    func set(delegate: WebSocketClientDelegate) {
+        self.delegate = delegate
+    }
+    
+    func connect() {
         socket.delegate = self
         socket.connect()
     }
@@ -20,45 +34,19 @@ final class WebSocketClient {
 extension WebSocketClient: WebSocketDelegate {
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
         switch event {
-        case .connected(let value):
-            do {
-                //let json = "{\"quotes\": [\"AAPL.US\"]}"
-                //let request = RealtimeQuotesRequest(realtimeQuotes: ["AAPL.US"])
-                //let data = try JSONEncoder().encode([request])
-                client.write(string: "[\"quotes\", [\"GAZP\",\"AAPL.US\"]]")
-            } catch {
-                
-            }
-        case .disconnected(let value, let code):
-            break
+        case .connected:
+            delegate?.didConnected()
+        case .disconnected:
+            delegate?.didDisconnected()
         case .text(let text):
-            do {
-                print(text)
-                let data = text.data(using: .utf8)!
-                let list = try JSONDecoder().decode([List<RealtimeQuotesResponse>].self, from: data)
-                list.forEach { result in
-                    if case let .object(value) = result {
-                        //print(value)
-                    }
-                }
-            } catch {
-                //print(error)
-            }
-        case .binary(let value):
-            break
-        case .pong(let value):
-            print(value)
-        case .ping(let value):
-            break
-        case .error(let value):
-            print(value)
-        case .viabilityChanged(let value):
-            break
-        case .reconnectSuggested(let value):
-            break
-        case .cancelled:
-            break
-        case .peerClosed:
+            guard let data = text.data(using: .utf8) else { return }
+            delegate?.didReceive(data: data, client: self)
+        case .binary(let data):
+            delegate?.didReceive(data: data, client: self)
+        case .error(let error):
+            guard let error = error else { return }
+            delegate?.didReceive(error: error)
+        default:
             break
         }
     }
