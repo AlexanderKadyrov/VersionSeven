@@ -2,7 +2,7 @@ import Foundation
 import SwiftyJSON
 
 protocol QuotesServiceDelegate: AnyObject {
-    func didReceive(quotes: [Quotes])
+    func didReceive(quotes: [Quote])
 }
 
 final class QuotesService {
@@ -43,7 +43,7 @@ extension QuotesService: WebSocketClientDelegate {
                     try oldValue.merge(with: [object])
                 }
                 let rawData = try oldValue.rawData()
-                let quotes = try JSONDecoder().decode([Quotes].self, from: rawData)
+                let quotes = try JSONDecoder().decode([Quote].self, from: rawData)
                 delegate?.didReceive(quotes: quotes)
             }
         } catch {
