@@ -16,7 +16,7 @@
 		1156A2642BD4736F0029DA44 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2632BD4736F0029DA44 /* SwiftyJSON */; };
 		1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2672BD477FF0029DA44 /* QuotesService.swift */; };
 		1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* QuotesRequest.swift */; };
-		1156A26D2BD4785C0029DA44 /* QuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */; };
+		1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* Quotes.swift */; };
 		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		1156A2602BD44E040029DA44 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		1156A2672BD477FF0029DA44 /* QuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesService.swift; sourceTree = "<group>"; };
 		1156A26A2BD478320029DA44 /* QuotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRequest.swift; sourceTree = "<group>"; };
-		1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesResponse.swift; sourceTree = "<group>"; };
+		1156A26C2BD4785C0029DA44 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		1156A26F2BD479370029DA44 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,7 +155,7 @@
 			children = (
 				1156A2672BD477FF0029DA44 /* QuotesService.swift */,
 				1156A26A2BD478320029DA44 /* QuotesRequest.swift */,
-				1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */,
+				1156A26C2BD4785C0029DA44 /* Quotes.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 				1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */,
-				1156A26D2BD4785C0029DA44 /* QuotesResponse.swift in Sources */,
+				1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

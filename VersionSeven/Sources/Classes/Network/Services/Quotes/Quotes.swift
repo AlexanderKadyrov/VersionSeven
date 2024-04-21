@@ -1,6 +1,6 @@
 import Foundation
 
-struct QuotesResponse: Codable {
+struct Quotes: Codable {
     
     /// Тикер
     let c: String
