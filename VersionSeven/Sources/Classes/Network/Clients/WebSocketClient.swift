@@ -2,10 +2,10 @@ import Foundation
 import Starscream
 
 protocol WebSocketClientDelegate: AnyObject {
-    func didReceive(error: Error, client: WebSocketClient)
-    func didReceive(data: Data, client: WebSocketClient)
-    func didDisconnected(client: WebSocketClient)
-    func didConnected(client: WebSocketClient)
+    func didReceive(error: Error, webSocketClient: WebSocketClient)
+    func didReceive(data: Data, webSocketClient: WebSocketClient)
+    func didDisconnected(webSocketClient: WebSocketClient)
+    func didConnected(webSocketClient: WebSocketClient)
 }
 
 final class WebSocketClient {
@@ -19,6 +19,7 @@ final class WebSocketClient {
         var request = URLRequest(url: url)
         request.timeoutInterval = 10
         webSocket = WebSocket(request: request)
+        webSocket.delegate = self
     }
     
     func disconnect() {
@@ -26,7 +27,6 @@ final class WebSocketClient {
     }
     
     func connect() {
-        webSocket.delegate = self
         webSocket.connect()
     }
     
@@ -39,17 +39,17 @@ extension WebSocketClient: WebSocketDelegate {
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
         switch event {
         case .connected:
-            delegate?.didConnected(client: self)
+            delegate?.didConnected(webSocketClient: self)
         case .disconnected:
-            delegate?.didDisconnected(client: self)
+            delegate?.didDisconnected(webSocketClient: self)
         case .text(let text):
             guard let data = text.data(using: .utf8) else { return }
-            delegate?.didReceive(data: data, client: self)
+            delegate?.didReceive(data: data, webSocketClient: self)
         case .binary(let data):
-            delegate?.didReceive(data: data, client: self)
+            delegate?.didReceive(data: data, webSocketClient: self)
         case .error(let error):
             guard let error = error else { return }
-            delegate?.didReceive(error: error, client: self)
+            delegate?.didReceive(error: error, webSocketClient: self)
         default:
             break
         }
