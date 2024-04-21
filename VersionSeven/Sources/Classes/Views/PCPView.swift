@@ -44,7 +44,11 @@ final class PCPView: UIView {
     
     private func set(pcp: Float?) {
         let pcp = pcp ?? .zero
-        textLabel.textColor = pcp > .zero ? .systemGreen : .red
+        if pcp == .zero {
+            textLabel.textColor = .black
+        } else {
+            textLabel.textColor = pcp > .zero ? .systemGreen : .red
+        }
         textLabel.text = "\(pcp)%"
     }
 }
