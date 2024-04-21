@@ -9,6 +9,9 @@ final class QuotesTabloidCellView: TabloidCellView {
             static let insets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
             static let spacing: CGFloat = 4
         }
+        enum BottomView {
+            static let spacing: CGFloat = 8
+        }
     }
     
     private lazy var topView: UIStackView = {
@@ -19,8 +22,9 @@ final class QuotesTabloidCellView: TabloidCellView {
     }()
     
     private lazy var bottomView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [nameView])
+        let view = UIStackView(arrangedSubviews: [nameView, chgView, pcpView])
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.spacing = Constants.BottomView.spacing
         view.axis = .horizontal
         return view
     }()
@@ -47,6 +51,18 @@ final class QuotesTabloidCellView: TabloidCellView {
     
     private let nameView: NameView = {
         let label = NameView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let chgView: CHGView = {
+        let label = CHGView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let pcpView: PCPView = {
+        let label = PCPView()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -78,6 +94,8 @@ final class QuotesTabloidCellView: TabloidCellView {
         super.fill(viewModel: viewModel)
         guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
         ltpView.ltp = viewModel.quotes.ltp
+        chgView.chg = viewModel.quotes.chg
+        pcpView.pcp = viewModel.quotes.pcp
         cView.text = viewModel.quotes.c
         nameView.text = viewModel.text
     }
