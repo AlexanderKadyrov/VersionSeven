@@ -23,6 +23,7 @@
 		1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */; };
 		1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */; };
 		1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A27C2BD5A3550029DA44 /* LTPView.swift */; };
+		1156A27F2BD5A4D60029DA44 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A27E2BD5A4D60029DA44 /* CView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellView.swift; sourceTree = "<group>"; };
 		1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellViewModel.swift; sourceTree = "<group>"; };
 		1156A27C2BD5A3550029DA44 /* LTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTPView.swift; sourceTree = "<group>"; };
+		1156A27E2BD5A4D60029DA44 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				1156A27C2BD5A3550029DA44 /* LTPView.swift */,
+				1156A27E2BD5A4D60029DA44 /* CView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
+				1156A27F2BD5A4D60029DA44 /* CView.swift in Sources */,
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 				1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */,
 				1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */,
