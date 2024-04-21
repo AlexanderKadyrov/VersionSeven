@@ -1,3 +1,4 @@
+import TabloidView
 import Foundation
 
 final class QuotesViewModel {
@@ -7,6 +8,8 @@ final class QuotesViewModel {
         service.delegate = self
         return service
     }()
+    
+    let tabloidViewModel = TabloidViewModel()
     
     func viewDidLoad() {
         quotesService.subscribe()
