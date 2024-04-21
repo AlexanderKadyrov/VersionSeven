@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quotes: Codable, Hashable {
+struct Quote: Codable, Hashable {
     
     /// Тикер
     let c: String
