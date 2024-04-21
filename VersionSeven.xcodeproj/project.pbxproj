@@ -22,6 +22,7 @@
 		1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2742BD5911F0029DA44 /* TabloidView */; };
 		1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */; };
 		1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */; };
+		1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A27C2BD5A3550029DA44 /* LTPView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		1156A2712BD58D170029DA44 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellView.swift; sourceTree = "<group>"; };
 		1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellViewModel.swift; sourceTree = "<group>"; };
+		1156A27C2BD5A3550029DA44 /* LTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTPView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				1156A25E2BD44DDC0029DA44 /* Network */,
 				1156A2582BD44A390029DA44 /* ViewControllers */,
+				1156A27B2BD5A3290029DA44 /* Views */,
 				1156A2572BD449EF0029DA44 /* Main */,
 			);
 			path = Classes;
@@ -187,6 +190,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1156A27B2BD5A3290029DA44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1156A27C2BD5A3550029DA44 /* LTPView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +285,7 @@
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 				1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */,
 				1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */,
+				1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 				1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */,
