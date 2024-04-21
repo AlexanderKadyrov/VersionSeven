@@ -2,23 +2,23 @@ import Foundation
 import Starscream
 
 protocol WebSocketClientDelegate: AnyObject {
-    func didConnected()
-    func didDisconnected()
+    func didReceive(error: Error, client: WebSocketClient)
     func didReceive(data: Data, client: WebSocketClient)
-    func didReceive(error: Error)
+    func didDisconnected(client: WebSocketClient)
+    func didConnected(client: WebSocketClient)
 }
 
 final class WebSocketClient {
     
     private weak var delegate: WebSocketClientDelegate?
     
-    private let socket: WebSocket
+    private let webSocket: WebSocket
     
     init?(url: URL?) {
         guard let url = url else { return nil }
         var request = URLRequest(url: url)
         request.timeoutInterval = 10
-        socket = WebSocket(request: request)
+        webSocket = WebSocket(request: request)
     }
     
     func set(delegate: WebSocketClientDelegate) {
@@ -26,8 +26,12 @@ final class WebSocketClient {
     }
     
     func connect() {
-        socket.delegate = self
-        socket.connect()
+        webSocket.delegate = self
+        webSocket.connect()
+    }
+    
+    func send(data: Data) {
+        webSocket.write(data: data)
     }
 }
 
@@ -35,9 +39,9 @@ extension WebSocketClient: WebSocketDelegate {
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
         switch event {
         case .connected:
-            delegate?.didConnected()
+            delegate?.didConnected(client: self)
         case .disconnected:
-            delegate?.didDisconnected()
+            delegate?.didDisconnected(client: self)
         case .text(let text):
             guard let data = text.data(using: .utf8) else { return }
             delegate?.didReceive(data: data, client: self)
@@ -45,7 +49,7 @@ extension WebSocketClient: WebSocketDelegate {
             delegate?.didReceive(data: data, client: self)
         case .error(let error):
             guard let error = error else { return }
-            delegate?.didReceive(error: error)
+            delegate?.didReceive(error: error, client: self)
         default:
             break
         }
