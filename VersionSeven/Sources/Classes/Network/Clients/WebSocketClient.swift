@@ -8,6 +8,11 @@ protocol WebSocketClientDelegate: AnyObject {
     func didConnected(webSocketClient: WebSocketClient)
 }
 
+extension WebSocketClientDelegate {
+    func didReceive(error: Error, webSocketClient: WebSocketClient) {}
+    func didDisconnected(webSocketClient: WebSocketClient) {}
+}
+
 final class WebSocketClient {
     
     private let webSocket: WebSocket
