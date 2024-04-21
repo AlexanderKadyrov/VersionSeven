@@ -37,7 +37,7 @@ final class LTPView: UIView {
     
     private func set(ltp: Float?) {
         let ltp = ltp ?? .zero
-        textLabel.text = "\(ltp)"
         textLabel.textColor = ltp > .zero ? .systemGreen : .red
+        textLabel.text = "\(ltp)"
     }
 }
