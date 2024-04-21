@@ -78,7 +78,7 @@ final class QuotesTabloidCellView: TabloidCellView {
         super.fill(viewModel: viewModel)
         guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
         nameView.text = [viewModel.quotes.ltr, viewModel.quotes.name].joined(separator: " | ")
-        ltpView.text = "\(viewModel.quotes.ltp)"
+        ltpView.ltp = viewModel.quotes.ltp
         cView.text = viewModel.quotes.c
     }
 }
