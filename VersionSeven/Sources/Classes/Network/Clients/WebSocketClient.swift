@@ -25,6 +25,10 @@ final class WebSocketClient {
         self.delegate = delegate
     }
     
+    func disconnect() {
+        webSocket.disconnect()
+    }
+    
     func connect() {
         webSocket.delegate = self
         webSocket.connect()
