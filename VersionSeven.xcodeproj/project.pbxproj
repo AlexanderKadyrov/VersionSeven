@@ -19,6 +19,7 @@
 		1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* Quotes.swift */; };
 		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
 		1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2712BD58D170029DA44 /* QuotesViewModel.swift */; };
+		1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2742BD5911F0029DA44 /* TabloidView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			files = (
 				1156A2642BD4736F0029DA44 /* SwiftyJSON in Frameworks */,
 				1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */,
+				1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +192,7 @@
 			packageProductDependencies = (
 				1156A25C2BD44D7A0029DA44 /* Starscream */,
 				1156A2632BD4736F0029DA44 /* SwiftyJSON */,
+				1156A2742BD5911F0029DA44 /* TabloidView */,
 			);
 			productName = VersionSeven;
 			productReference = 1156A23E2BD448C60029DA44 /* VersionSeven.app */;
@@ -222,6 +225,7 @@
 			packageReferences = (
 				1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */,
 				1156A2622BD4736F0029DA44 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */,
 			);
 			productRefGroup = 1156A23F2BD448C60029DA44 /* Products */;
 			projectDirPath = "";
@@ -488,6 +492,14 @@
 				version = 5.0.2;
 			};
 		};
+		1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlexanderKadyrov/TabloidView";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -500,6 +512,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1156A2622BD4736F0029DA44 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		1156A2742BD5911F0029DA44 /* TabloidView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */;
+			productName = TabloidView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
