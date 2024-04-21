@@ -2,14 +2,14 @@ import Foundation
 
 final class QuotesViewModel {
     
-    private let service = QuotesService()
-    
-    init() {
-        service.set(delegate: self)
-    }
+    private lazy var quotesService: QuotesService = {
+        let service = QuotesService()
+        service.delegate = self
+        return service
+    }()
     
     func viewDidLoad() {
-        service.subscribe()
+        quotesService.subscribe()
     }
 }
 
