@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
-		1156A2462BD448C60029DA44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* HomeViewController.swift */; };
+		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
 		1156A24E2BD448C80029DA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24C2BD448C80029DA44 /* LaunchScreen.storyboard */; };
 		1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A25C2BD44D7A0029DA44 /* Starscream */; };
@@ -18,12 +18,13 @@
 		1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* QuotesRequest.swift */; };
 		1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* Quotes.swift */; };
 		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
+		1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2712BD58D170029DA44 /* QuotesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1156A23E2BD448C60029DA44 /* VersionSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersionSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156A2412BD448C60029DA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1156A2452BD448C60029DA44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1156A2452BD448C60029DA44 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		1156A24A2BD448C80029DA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1156A24D2BD448C80029DA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1156A24F2BD448C80029DA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		1156A26A2BD478320029DA44 /* QuotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRequest.swift; sourceTree = "<group>"; };
 		1156A26C2BD4785C0029DA44 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		1156A26F2BD479370029DA44 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		1156A2712BD58D170029DA44 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,17 +104,18 @@
 		1156A2582BD44A390029DA44 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1156A2592BD44A410029DA44 /* Home */,
+				1156A2592BD44A410029DA44 /* Quotes */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		1156A2592BD44A410029DA44 /* Home */ = {
+		1156A2592BD44A410029DA44 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
-				1156A2452BD448C60029DA44 /* HomeViewController.swift */,
+				1156A2452BD448C60029DA44 /* QuotesViewController.swift */,
+				1156A2712BD58D170029DA44 /* QuotesViewModel.swift */,
 			);
-			path = Home;
+			path = Quotes;
 			sourceTree = "<group>";
 		};
 		1156A25A2BD44A760029DA44 /* Resources */ = {
@@ -246,11 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1156A2462BD448C60029DA44 /* HomeViewController.swift in Sources */,
+				1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
 				1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */,
+				1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* Quotes.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 			);
