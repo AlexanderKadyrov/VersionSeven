@@ -9,9 +9,10 @@ final class LTPView: UIView {
         return label
     }()
     
-    var text: String? {
-        set { textLabel.text = newValue }
-        get { return textLabel.text }
+    var ltp: Float? {
+        didSet {
+            set(ltp: ltp)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -32,5 +33,11 @@ final class LTPView: UIView {
             textLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             textLabel.topAnchor.constraint(equalTo: topAnchor)
         ])
+    }
+    
+    private func set(ltp: Float?) {
+        let ltp = ltp ?? .zero
+        textLabel.text = "\(ltp)"
+        textLabel.textColor = ltp > .zero ? .systemGreen : .red
     }
 }
