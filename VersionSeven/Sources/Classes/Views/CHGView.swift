@@ -13,7 +13,7 @@ final class CHGView: UIView {
     
     var chg: Float? {
         didSet {
-            
+            set(chg: chg)
         }
     }
     
