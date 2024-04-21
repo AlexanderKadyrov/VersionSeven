@@ -4,6 +4,7 @@ import UIKit
 final class LTPView: UIView {
     
     enum Constants {
+        static let cornerRadius: CGFloat = 6
         enum TextLabel {
             static let insets = UIEdgeInsets(top: .zero, left: 4, bottom: .zero, right: 4)
         }
@@ -33,6 +34,7 @@ final class LTPView: UIView {
     }
     
     private func configureViews() {
+        layer.cornerRadius = Constants.cornerRadius
         addSubview(textLabel)
         NSLayoutConstraint.activate([
             textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.TextLabel.insets.right),
