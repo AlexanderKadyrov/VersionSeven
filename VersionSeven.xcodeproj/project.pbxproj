@@ -14,9 +14,9 @@
 		1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A25C2BD44D7A0029DA44 /* Starscream */; };
 		1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2602BD44E040029DA44 /* WebSocketClient.swift */; };
 		1156A2642BD4736F0029DA44 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2632BD4736F0029DA44 /* SwiftyJSON */; };
-		1156A2682BD477FF0029DA44 /* RealtimeQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2672BD477FF0029DA44 /* RealtimeQuotesService.swift */; };
-		1156A26B2BD478320029DA44 /* RealtimeQuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* RealtimeQuotesRequest.swift */; };
-		1156A26D2BD4785C0029DA44 /* RealtimeQuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */; };
+		1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2672BD477FF0029DA44 /* QuotesService.swift */; };
+		1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* QuotesRequest.swift */; };
+		1156A26D2BD4785C0029DA44 /* QuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */; };
 		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +28,9 @@
 		1156A24D2BD448C80029DA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1156A24F2BD448C80029DA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1156A2602BD44E040029DA44 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
-		1156A2672BD477FF0029DA44 /* RealtimeQuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesService.swift; sourceTree = "<group>"; };
-		1156A26A2BD478320029DA44 /* RealtimeQuotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesRequest.swift; sourceTree = "<group>"; };
-		1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuotesResponse.swift; sourceTree = "<group>"; };
+		1156A2672BD477FF0029DA44 /* QuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesService.swift; sourceTree = "<group>"; };
+		1156A26A2BD478320029DA44 /* QuotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRequest.swift; sourceTree = "<group>"; };
+		1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesResponse.swift; sourceTree = "<group>"; };
 		1156A26F2BD479370029DA44 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,19 +145,19 @@
 		1156A2652BD477DC0029DA44 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1156A2662BD477EC0029DA44 /* RealtimeQuotes */,
+				1156A2662BD477EC0029DA44 /* Quotes */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1156A2662BD477EC0029DA44 /* RealtimeQuotes */ = {
+		1156A2662BD477EC0029DA44 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
-				1156A2672BD477FF0029DA44 /* RealtimeQuotesService.swift */,
-				1156A26A2BD478320029DA44 /* RealtimeQuotesRequest.swift */,
-				1156A26C2BD4785C0029DA44 /* RealtimeQuotesResponse.swift */,
+				1156A2672BD477FF0029DA44 /* QuotesService.swift */,
+				1156A26A2BD478320029DA44 /* QuotesRequest.swift */,
+				1156A26C2BD4785C0029DA44 /* QuotesResponse.swift */,
 			);
-			path = RealtimeQuotes;
+			path = Quotes;
 			sourceTree = "<group>";
 		};
 		1156A26E2BD478DA0029DA44 /* Codable */ = {
@@ -250,9 +250,9 @@
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */,
-				1156A2682BD477FF0029DA44 /* RealtimeQuotesService.swift in Sources */,
-				1156A26D2BD4785C0029DA44 /* RealtimeQuotesResponse.swift in Sources */,
-				1156A26B2BD478320029DA44 /* RealtimeQuotesRequest.swift in Sources */,
+				1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */,
+				1156A26D2BD4785C0029DA44 /* QuotesResponse.swift in Sources */,
+				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 import Foundation
 
-struct RealtimeQuotesResponse: Codable {
+struct QuotesResponse: Codable {
     
     /// Тикер
     let c: String
