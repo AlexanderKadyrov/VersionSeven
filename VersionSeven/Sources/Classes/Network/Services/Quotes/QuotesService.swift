@@ -7,18 +7,14 @@ protocol QuotesServiceDelegate: AnyObject {
 
 final class QuotesService {
     
-    private weak var delegate: QuotesServiceDelegate?
-    
-    private let client = WebSocketClient(url: URL(string: "wss://wss.tradernet.com"))
     private var oldValue = JSON([])
+    private lazy var client: WebSocketClient? = {
+        let client = WebSocketClient(url: URL(string: "wss://wss.tradernet.com"))
+        client?.delegate = self
+        return client
+    }()
     
-    init() {
-        client?.set(delegate: self)
-    }
-    
-    func set(delegate: QuotesServiceDelegate) {
-        self.delegate = delegate
-    }
+    weak var delegate: QuotesServiceDelegate?
     
     func unsubscribe() {
         client?.disconnect()
@@ -31,11 +27,11 @@ final class QuotesService {
 
 extension QuotesService: WebSocketClientDelegate {
     
-    func didReceive(error: Error, client: WebSocketClient) {
+    func didReceive(error: Error, webSocketClient: WebSocketClient) {
         
     }
     
-    func didReceive(data: Data, client: WebSocketClient) {
+    func didReceive(data: Data, webSocketClient: WebSocketClient) {
         do {
             let newValue = try JSON(data: data)
             if let q = newValue[0].string, q == "q" {
@@ -55,13 +51,13 @@ extension QuotesService: WebSocketClientDelegate {
         }
     }
     
-    func didDisconnected(client: WebSocketClient) {
+    func didDisconnected(webSocketClient: WebSocketClient) {
         
     }
     
-    func didConnected(client: WebSocketClient) {
+    func didConnected(webSocketClient: WebSocketClient) {
         let request = "[\"quotes\", [\"GAZP\",\"AAPL.US\"]]"
         guard let data = request.data(using: .utf8) else { return }
-        client.send(data: data)
+        webSocketClient.send(data: data)
     }
 }
