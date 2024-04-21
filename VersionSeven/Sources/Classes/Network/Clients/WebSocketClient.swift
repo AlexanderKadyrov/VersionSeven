@@ -10,19 +10,15 @@ protocol WebSocketClientDelegate: AnyObject {
 
 final class WebSocketClient {
     
-    private weak var delegate: WebSocketClientDelegate?
-    
     private let webSocket: WebSocket
+    
+    weak var delegate: WebSocketClientDelegate?
     
     init?(url: URL?) {
         guard let url = url else { return nil }
         var request = URLRequest(url: url)
         request.timeoutInterval = 10
         webSocket = WebSocket(request: request)
-    }
-    
-    func set(delegate: WebSocketClientDelegate) {
-        self.delegate = delegate
     }
     
     func disconnect() {
