@@ -44,7 +44,7 @@ final class CHGView: UIView {
     
     private func set(chg: Float?) {
         let chg = chg ?? .zero
-        textLabel.textColor = chg > .zero ? .systemGreen : .red
+        textLabel.textColor = chg >= .zero ? .systemGreen : .red
         textLabel.text = "\(chg)"
     }
 }
