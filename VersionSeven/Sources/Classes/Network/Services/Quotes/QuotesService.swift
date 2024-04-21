@@ -8,7 +8,7 @@ protocol QuotesServiceDelegate: AnyObject {
 final class QuotesService {
     
     private var oldValue = JSON([])
-    private lazy var client: WebSocketClient? = {
+    private lazy var webSocketClient: WebSocketClient? = {
         let client = WebSocketClient(url: URL(string: "wss://wss.tradernet.com"))
         client?.delegate = self
         return client
@@ -17,19 +17,15 @@ final class QuotesService {
     weak var delegate: QuotesServiceDelegate?
     
     func unsubscribe() {
-        client?.disconnect()
+        webSocketClient?.disconnect()
     }
     
     func subscribe() {
-        client?.connect()
+        webSocketClient?.connect()
     }
 }
 
 extension QuotesService: WebSocketClientDelegate {
-    
-    func didReceive(error: Error, webSocketClient: WebSocketClient) {
-        
-    }
     
     func didReceive(data: Data, webSocketClient: WebSocketClient) {
         do {
@@ -49,10 +45,6 @@ extension QuotesService: WebSocketClientDelegate {
         } catch {
             
         }
-    }
-    
-    func didDisconnected(webSocketClient: WebSocketClient) {
-        
     }
     
     func didConnected(webSocketClient: WebSocketClient) {
