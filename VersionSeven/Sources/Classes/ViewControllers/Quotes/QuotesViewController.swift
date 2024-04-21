@@ -1,10 +1,19 @@
+import TabloidView
 import UIKit
 
 final class QuotesViewController: UIViewController {
     
+    private lazy var tabloidView: TabloidView = {
+        let view = TabloidView(style: .plain)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.separatorStyle = .none
+        return view
+    }()
+    
     var viewModel: QuotesViewModel? {
         didSet {
-            
+            tabloidView.viewModel = viewModel?.tabloidViewModel
         }
     }
     
@@ -16,5 +25,12 @@ final class QuotesViewController: UIViewController {
     
     private func configureViews() {
         view.backgroundColor = .white
+        view.addSubview(tabloidView)
+        NSLayoutConstraint.activate([
+            tabloidView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            tabloidView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            tabloidView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tabloidView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
     }
 }
