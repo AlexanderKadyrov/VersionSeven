@@ -5,33 +5,49 @@ import UIKit
 final class QuotesTabloidCellView: TabloidCellView {
     
     enum Constants {
-        enum VerticalStackView {
+        enum ContainerView {
             static let insets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
             static let spacing: CGFloat = 4
         }
     }
     
-    private lazy var verticalStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [cLabel, nameLabel])
+    private lazy var topView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [cView, ltpView])
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.spacing = Constants.VerticalStackView.spacing
+        view.axis = .horizontal
+        return view
+    }()
+    
+    private lazy var bottomView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [nameView])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        return view
+    }()
+    
+    private lazy var containerView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [topView, bottomView])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.spacing = Constants.ContainerView.spacing
         view.axis = .vertical
         return view
     }()
     
-    private let cLabel: UILabel = {
-        let label = UILabel()
+    private let cView: CView = {
+        let label = CView()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        label.textColor = .black
         return label
     }()
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
+    private let ltpView: LTPView = {
+        let label = LTPView()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .lightGray
+        return label
+    }()
+    
+    private let nameView: NameView = {
+        let label = NameView()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -49,19 +65,20 @@ final class QuotesTabloidCellView: TabloidCellView {
         backgroundColor = .white
         selectionStyle = .none
         
-        contentView.addSubview(verticalStackView)
+        contentView.addSubview(containerView)
         NSLayoutConstraint.activate([
-            verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.VerticalStackView.insets.right),
-            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.VerticalStackView.insets.bottom),
-            verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.VerticalStackView.insets.left),
-            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.VerticalStackView.insets.top)
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.ContainerView.insets.right),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.ContainerView.insets.bottom),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ContainerView.insets.left),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.ContainerView.insets.top)
         ])
     }
     
     override func fill(viewModel: TabloidCellViewModel?) {
         super.fill(viewModel: viewModel)
         guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
-        nameLabel.text = [viewModel.quotes.ltr, viewModel.quotes.name].joined(separator: " | ")
-        cLabel.text = viewModel.quotes.c
+        nameView.text = [viewModel.quotes.ltr, viewModel.quotes.name].joined(separator: " | ")
+        ltpView.text = "\(viewModel.quotes.ltp)"
+        cView.text = viewModel.quotes.c
     }
 }
