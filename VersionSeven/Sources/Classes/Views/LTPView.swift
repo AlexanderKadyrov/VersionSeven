@@ -6,6 +6,8 @@ final class LTPView: UIView {
     private let textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.textColor = .black
         return label
     }()
     
@@ -37,7 +39,6 @@ final class LTPView: UIView {
     
     private func set(ltp: Float?) {
         let ltp = ltp ?? .zero
-        textLabel.textColor = ltp > .zero ? .systemGreen : .red
         textLabel.text = "\(ltp)"
     }
 }
