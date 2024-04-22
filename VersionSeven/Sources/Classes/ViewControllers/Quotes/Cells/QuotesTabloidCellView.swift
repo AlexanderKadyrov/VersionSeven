@@ -95,8 +95,8 @@ final class QuotesTabloidCellView: TabloidCellView {
         guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
         chgView.chg = viewModel.quote.chg
         pcpView.pcp = viewModel.quote.pcp
+        ltpView.ltp = viewModel.quote.ltp
         cView.text = viewModel.quote.c
         nameView.text = viewModel.text
-        ltpView.ltp = viewModel.ltp
     }
 }
