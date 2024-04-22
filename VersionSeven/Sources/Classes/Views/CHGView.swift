@@ -11,7 +11,7 @@ final class CHGView: UIView {
         return label
     }()
     
-    var chg: Double? {
+    var chg: Float? {
         didSet {
             set(chg: chg)
         }
@@ -42,7 +42,7 @@ final class CHGView: UIView {
         ])
     }
     
-    private func set(chg: Double?) {
+    private func set(chg: Float?) {
         let chg = chg ?? .zero
         textLabel.textColor = chg >= .zero ? .systemGreen : .red
         textLabel.text = "\(chg)"
