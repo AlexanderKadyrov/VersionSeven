@@ -7,10 +7,14 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
         static let cellIdentifier = "QuotesTabloidCellView"
     }
     
-    let quoteContainer: QuoteContainer
+    let quote: Quote
+    let text: String
     
-    init(quoteContainer: QuoteContainer) {
-        self.quoteContainer = quoteContainer
+    init(quote: Quote) {
+        self.text = [quote.ltr, quote.name]
+            .compactMap { $0 }
+            .joined(separator: " | ")
+        self.quote = quote
         super.init(cellIdentifier: Constants.cellIdentifier)
     }
 }
