@@ -47,12 +47,4 @@ struct Quote: Codable, Hashable {
         
         return mergedQuote
     }
-    
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.c == rhs.c
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(c)
-    }
 }
