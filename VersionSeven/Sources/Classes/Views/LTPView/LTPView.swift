@@ -49,15 +49,19 @@ final class LTPView: UIView {
         case .equal(let value):
             backgroundColor = .clear
             textLabel.textColor = .black
-            textLabel.text = "\(value)"
+            set(value: value)
         case .down(let value):
             backgroundColor = .red
             textLabel.textColor = .white
-            textLabel.text = "\(value)"
+            set(value: value)
         case .up(let value):
             backgroundColor = .systemGreen
             textLabel.textColor = .white
-            textLabel.text = "\(value)"
+            set(value: value)
         }
+    }
+    
+    private func set(value: Double) {
+        textLabel.text = "\(value)"
     }
 }
