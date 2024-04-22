@@ -27,6 +27,7 @@
 		1156A2812BD5A5490029DA44 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2802BD5A5490029DA44 /* NameView.swift */; };
 		1156A2832BD5AB1F0029DA44 /* CHGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2822BD5AB1F0029DA44 /* CHGView.swift */; };
 		1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2842BD5AC190029DA44 /* PCPView.swift */; };
+		1156A2882BD686770029DA44 /* LTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2872BD686770029DA44 /* LTP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		1156A2802BD5A5490029DA44 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		1156A2822BD5AB1F0029DA44 /* CHGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGView.swift; sourceTree = "<group>"; };
 		1156A2842BD5AC190029DA44 /* PCPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCPView.swift; sourceTree = "<group>"; };
+		1156A2872BD686770029DA44 /* LTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,13 +203,22 @@
 		1156A27B2BD5A3290029DA44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1156A27C2BD5A3550029DA44 /* LTPView.swift */,
+				1156A2862BD686620029DA44 /* LTPView */,
 				1156A27E2BD5A4D60029DA44 /* CView.swift */,
 				1156A2802BD5A5490029DA44 /* NameView.swift */,
 				1156A2822BD5AB1F0029DA44 /* CHGView.swift */,
 				1156A2842BD5AC190029DA44 /* PCPView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1156A2862BD686620029DA44 /* LTPView */ = {
+			isa = PBXGroup;
+			children = (
+				1156A27C2BD5A3550029DA44 /* LTPView.swift */,
+				1156A2872BD686770029DA44 /* LTP.swift */,
+			);
+			path = LTPView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 				1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */,
 				1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
+				1156A2882BD686770029DA44 /* LTP.swift in Sources */,
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1156A2832BD5AB1F0029DA44 /* CHGView.swift in Sources */,
 				1156A27F2BD5A4D60029DA44 /* CView.swift in Sources */,
