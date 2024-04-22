@@ -28,6 +28,7 @@
 		1156A2832BD5AB1F0029DA44 /* CHGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2822BD5AB1F0029DA44 /* CHGView.swift */; };
 		1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2842BD5AC190029DA44 /* PCPView.swift */; };
 		1156A2882BD686770029DA44 /* LTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2872BD686770029DA44 /* LTP.swift */; };
+		1156A28B2BD695BD0029DA44 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A28A2BD695BD0029DA44 /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		1156A2822BD5AB1F0029DA44 /* CHGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGView.swift; sourceTree = "<group>"; };
 		1156A2842BD5AC190029DA44 /* PCPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCPView.swift; sourceTree = "<group>"; };
 		1156A2872BD686770029DA44 /* LTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTP.swift; sourceTree = "<group>"; };
+		1156A28A2BD695BD0029DA44 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		1156A2562BD449E80029DA44 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1156A2892BD695A70029DA44 /* Extensions */,
 				1156A25E2BD44DDC0029DA44 /* Network */,
 				1156A2582BD44A390029DA44 /* ViewControllers */,
 				1156A27B2BD5A3290029DA44 /* Views */,
@@ -221,6 +224,14 @@
 			path = LTPView;
 			sourceTree = "<group>";
 		};
+		1156A2892BD695A70029DA44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1156A28A2BD695BD0029DA44 /* Array+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +325,7 @@
 				1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */,
 				1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* Quote.swift in Sources */,
+				1156A28B2BD695BD0029DA44 /* Array+.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 				1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */,
 				1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */,
