@@ -26,7 +26,7 @@ struct Quote: Codable, Hashable {
     let name: String?
     
     /// Цена последней сделки
-    let ltp: Float
+    let ltp: LTP
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
     let chg: Float
@@ -46,5 +46,13 @@ struct Quote: Codable, Hashable {
         let mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
         
         return mergedQuote
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.c == rhs.c
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(c)
     }
 }
