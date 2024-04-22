@@ -54,16 +54,7 @@ final class QuotesViewModel {
 extension QuotesViewModel: QuotesServiceDelegate {
     func didReceive(quotes: [Quote]) {
         let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
-        let new = Set(cellViewModels)
-        
-        let oldSections = tabloidViewModel.sections
-            .flatMap { $0 }
-            .compactMap { $0 as? QuotesTabloidCellViewModel }
-        
-        let old = Set(oldSections)
-        let newSections = Array(new.union(old))
-        let sorted = newSections.sorted(like: identifiers, keyPath: \.quote.c)
-        
+        let sorted = cellViewModels.sorted(like: identifiers, keyPath: \.quote.c)
         tabloidViewModel.sections = [sorted]
     }
 }
