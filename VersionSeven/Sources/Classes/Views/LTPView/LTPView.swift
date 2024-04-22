@@ -61,7 +61,7 @@ final class LTPView: UIView {
         }
     }
     
-    private func set(value: Double) {
+    private func set(value: Float) {
         textLabel.text = "\(value)"
     }
 }
