@@ -32,4 +32,12 @@ struct Quote: Codable, Hashable {
     
     /// Минимальный шаг цены
     let minStep: Float?
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.c == rhs.c
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(c)
+    }
 }
