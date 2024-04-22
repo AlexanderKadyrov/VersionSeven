@@ -26,7 +26,7 @@ struct Quote: Codable, Hashable {
     let name: String?
     
     /// Цена последней сделки
-    let ltp: LTP
+    var ltp: LTP
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
     let chg: Float
@@ -35,7 +35,8 @@ struct Quote: Codable, Hashable {
     let minStep: Float?
     
     func merged(with newQuote: Quote) throws -> Quote {
-        let oldData = try JSONEncoder().encode(self)
+        let oldQuote = self
+        let oldData = try JSONEncoder().encode(oldQuote)
         let oldObject = try JSON(data: oldData)
         
         let newData = try JSONEncoder().encode(newQuote)
@@ -43,7 +44,15 @@ struct Quote: Codable, Hashable {
         
         let merged = try oldObject.merged(with: newObject)
         let mergedData = try merged.rawData()
-        let mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
+        var mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
+        
+        if mergedQuote.ltp > oldQuote.ltp {
+            mergedQuote.ltp = .up(mergedQuote.ltp.rawValue)
+        } else if mergedQuote.ltp < oldQuote.ltp {
+            mergedQuote.ltp = .down(mergedQuote.ltp.rawValue)
+        } else {
+            mergedQuote.ltp = .equal(mergedQuote.ltp.rawValue)
+        }
         
         return mergedQuote
     }
