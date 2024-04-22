@@ -2,6 +2,16 @@ import Foundation
 
 struct Quote: Codable, Hashable {
     
+    enum CodingKeys : String, CodingKey {
+        case c
+        case pcp
+        case ltr
+        case name
+        case ltp
+        case chg
+        case minStep = "min_step"
+    }
+    
     /// Тикер
     let c: String
     
@@ -19,4 +29,6 @@ struct Quote: Codable, Hashable {
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
     let chg: Double
+    
+    let minStep: Double
 }
