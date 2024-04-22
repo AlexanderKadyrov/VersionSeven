@@ -7,13 +7,14 @@ protocol QuotesServiceDelegate: AnyObject {
 
 final class QuotesService {
     
-    private let identifiers: [String]
-    private var oldValue = JSON([])
     private lazy var webSocketClient: WebSocketClient? = {
         let client = WebSocketClient(url: URL(string: "wss://wss.tradernet.com"))
         client?.delegate = self
         return client
     }()
+    
+    private let identifiers: [String]
+    private var quotes = Set<Quote>()
     
     weak var delegate: QuotesServiceDelegate?
     
@@ -36,16 +37,20 @@ extension QuotesService: WebSocketClientDelegate {
         do {
             let newValue = try JSON(data: data)
             if let q = newValue[0].string, q == "q" {
-                let object = newValue[1]
-                if var old = oldValue.enumerated().first(where: { $0.element.1["c"].stringValue == object["c"].stringValue }) {
-                    try old.element.1.merge(with: object)
-                    oldValue[old.offset] = old.element.1
+                let newObject = newValue[1]
+                let newData = try newObject.rawData()
+                let newQuote = try JSONDecoder().decode(Quote.self, from: newData)
+                if let oldQuote = quotes.first(where: { $0.c == newQuote.c }) {
+                    let oldData = try JSONEncoder().encode(oldQuote)
+                    let oldObject = try JSON(data: oldData)
+                    let merged = try oldObject.merged(with: newObject)
+                    let mergedData = try merged.rawData()
+                    let mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
+                    quotes = Set([mergedQuote]).union(quotes)
                 } else {
-                    try oldValue.merge(with: [object])
+                    quotes = Set([newQuote]).union(quotes)
                 }
-                let rawData = try oldValue.rawData()
-                let quotes = try JSONDecoder().decode([Quote].self, from: rawData)
-                delegate?.didReceive(quotes: quotes)
+                delegate?.didReceive(quotes: Array(quotes))
             }
         } catch {
             
