@@ -13,23 +13,23 @@ struct Quote: Codable, Hashable {
     }
     
     /// Тикер
-    let c: String
+    let c: String?
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
-    let pcp: Float
+    let pcp: Float?
     
     /// Биржа последней сделки
-    let ltr: String
+    let ltr: String?
     
     /// Название бумаги
-    let name: String
+    let name: String?
     
     /// Цена последней сделки
-    let ltp: Float
+    let ltp: Float?
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
-    let chg: Float
+    let chg: Float?
     
     /// Минимальный шаг цены
-    let minStep: Float
+    let minStep: Float?
 }
