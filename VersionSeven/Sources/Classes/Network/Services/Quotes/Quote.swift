@@ -25,10 +25,11 @@ struct Quote: Codable, Hashable {
     let name: String
     
     /// Цена последней сделки
-    let ltp: Double
+    let ltp: Float
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
-    let chg: Double
+    let chg: Float
     
-    let minStep: Double
+    /// Минимальный шаг цены
+    let minStep: Float
 }
