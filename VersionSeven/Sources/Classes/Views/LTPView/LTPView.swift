@@ -17,9 +17,9 @@ final class LTPView: UIView {
         return label
     }()
     
-    var ltp: Float? {
+    var ltp: LTP = .equal(.zero) {
         didSet {
-            set(oldValue: oldValue, newValue: ltp)
+            set(ltp: ltp)
         }
     }
     
@@ -44,19 +44,20 @@ final class LTPView: UIView {
         ])
     }
     
-    private func set(oldValue: Float?, newValue: Float?) {
-        let oldValue = oldValue ?? .zero
-        let newValue = newValue ?? .zero
-        textLabel.text = "\(newValue)"
-        if newValue > oldValue {
-            backgroundColor = .systemGreen
-            textLabel.textColor = .white
-        } else if newValue < oldValue {
-            backgroundColor = .red
-            textLabel.textColor = .white
-        } else {
+    private func set(ltp: LTP) {
+        switch ltp {
+        case .equal(let value):
             backgroundColor = .clear
             textLabel.textColor = .black
+            textLabel.text = "\(value)"
+        case .down(let value):
+            backgroundColor = .red
+            textLabel.textColor = .white
+            textLabel.text = "\(value)"
+        case .up(let value):
+            backgroundColor = .systemGreen
+            textLabel.textColor = .white
+            textLabel.text = "\(value)"
         }
     }
 }
