@@ -11,7 +11,7 @@ final class PCPView: UIView {
         return label
     }()
     
-    var pcp: Double? {
+    var pcp: Float? {
         didSet {
             set(pcp: pcp)
         }
@@ -42,7 +42,7 @@ final class PCPView: UIView {
         ])
     }
     
-    private func set(pcp: Double?) {
+    private func set(pcp: Float?) {
         let pcp = pcp ?? .zero
         if pcp == .zero {
             textLabel.textColor = .black
