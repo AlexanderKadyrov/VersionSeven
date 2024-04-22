@@ -1,6 +1,6 @@
 import Foundation
 
-enum LTP: Codable, Comparable {
+enum LTP: Codable, Hashable, Comparable {
     
     case equal(Float)
     case down(Float)
