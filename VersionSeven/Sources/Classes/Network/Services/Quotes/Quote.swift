@@ -16,7 +16,7 @@ struct Quote: Codable, Hashable {
     let c: String
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
-    let pcp: Double
+    let pcp: Float
     
     /// Биржа последней сделки
     let ltr: String
