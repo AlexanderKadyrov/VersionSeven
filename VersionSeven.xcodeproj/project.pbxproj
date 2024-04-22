@@ -29,7 +29,6 @@
 		1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2842BD5AC190029DA44 /* PCPView.swift */; };
 		1156A2882BD686770029DA44 /* LTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2872BD686770029DA44 /* LTP.swift */; };
 		1156A28B2BD695BD0029DA44 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A28A2BD695BD0029DA44 /* Array+.swift */; };
-		1156A28D2BD70A500029DA44 /* QuoteContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A28C2BD70A500029DA44 /* QuoteContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +53,6 @@
 		1156A2842BD5AC190029DA44 /* PCPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCPView.swift; sourceTree = "<group>"; };
 		1156A2872BD686770029DA44 /* LTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTP.swift; sourceTree = "<group>"; };
 		1156A28A2BD695BD0029DA44 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
-		1156A28C2BD70A500029DA44 /* QuoteContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +181,6 @@
 			children = (
 				1156A2672BD477FF0029DA44 /* QuotesService.swift */,
 				1156A26A2BD478320029DA44 /* QuotesRequest.swift */,
-				1156A28C2BD70A500029DA44 /* QuoteContainer.swift */,
 				1156A26C2BD4785C0029DA44 /* Quote.swift */,
 			);
 			path = Quotes;
@@ -329,7 +326,6 @@
 				1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* Quote.swift in Sources */,
 				1156A28B2BD695BD0029DA44 /* Array+.swift in Sources */,
-				1156A28D2BD70A500029DA44 /* QuoteContainer.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 				1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */,
 				1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */,
