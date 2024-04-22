@@ -19,6 +19,15 @@ final class QuotesViewModel {
 extension QuotesViewModel: QuotesServiceDelegate {
     func didReceive(quotes: [Quote]) {
         let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
-        tabloidViewModel.sections = [cellViewModels]
+        let new = Set(cellViewModels)
+        
+        let sections = tabloidViewModel.sections
+            .flatMap { $0 }
+            .compactMap { $0 as? QuotesTabloidCellViewModel }
+        
+        let old = Set(sections)
+        let set = new.union(old)
+        
+        tabloidViewModel.sections = [Array(set)]
     }
 }
