@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 struct Quote: Codable, Hashable {
     
@@ -13,10 +14,10 @@ struct Quote: Codable, Hashable {
     }
     
     /// Тикер
-    let c: String?
+    let c: String
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
-    let pcp: Float?
+    let pcp: Float
     
     /// Биржа последней сделки
     let ltr: String?
@@ -25,13 +26,27 @@ struct Quote: Codable, Hashable {
     let name: String?
     
     /// Цена последней сделки
-    let ltp: Float?
+    let ltp: Float
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
-    let chg: Float?
+    let chg: Float
     
     /// Минимальный шаг цены
     let minStep: Float?
+    
+    func merged(with newQuote: Quote) throws -> Quote {
+        let oldData = try JSONEncoder().encode(self)
+        let oldObject = try JSON(data: oldData)
+        
+        let newData = try JSONEncoder().encode(newQuote)
+        let newObject = try JSON(data: newData)
+        
+        let merged = try oldObject.merged(with: newObject)
+        let mergedData = try merged.rawData()
+        let mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
+        
+        return mergedQuote
+    }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.c == rhs.c
