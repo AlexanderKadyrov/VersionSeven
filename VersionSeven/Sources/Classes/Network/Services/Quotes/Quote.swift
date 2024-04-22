@@ -46,9 +46,9 @@ struct Quote: Codable, Hashable {
         let mergedData = try merged.rawData()
         var mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
         
-        if mergedQuote.ltp > oldQuote.ltp {
+        if mergedQuote.ltp.rawValue > oldQuote.ltp.rawValue {
             mergedQuote.ltp = .up(mergedQuote.ltp.rawValue)
-        } else if mergedQuote.ltp < oldQuote.ltp {
+        } else if mergedQuote.ltp.rawValue < oldQuote.ltp.rawValue {
             mergedQuote.ltp = .down(mergedQuote.ltp.rawValue)
         } else {
             mergedQuote.ltp = .equal(mergedQuote.ltp.rawValue)
