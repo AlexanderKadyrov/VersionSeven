@@ -93,10 +93,10 @@ final class QuotesTabloidCellView: TabloidCellView {
     override func fill(viewModel: TabloidCellViewModel?) {
         super.fill(viewModel: viewModel)
         guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
-        ltpView.ltp = viewModel.quote.ltp
         chgView.chg = viewModel.quote.chg
         pcpView.pcp = viewModel.quote.pcp
         cView.text = viewModel.quote.c
         nameView.text = viewModel.text
+        ltpView.ltp = viewModel.ltp
     }
 }
