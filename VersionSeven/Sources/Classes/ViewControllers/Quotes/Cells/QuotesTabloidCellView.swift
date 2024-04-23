@@ -70,9 +70,9 @@ final class QuotesTabloidCellView: TabloidCellView {
     override var cellViewModel: TabloidCellViewModel? {
         didSet {
             guard let cellViewModel = cellViewModel as? QuotesTabloidCellViewModel else { return }
+            ltpView.ltp = .equal(cellViewModel.quote.ltp ?? .zero)
             chgView.chg = cellViewModel.quote.chg
             pcpView.pcp = cellViewModel.quote.pcp
-            ltpView.ltp = cellViewModel.quote.ltp
             cView.text = cellViewModel.quote.c
             nameView.text = cellViewModel.text
         }
