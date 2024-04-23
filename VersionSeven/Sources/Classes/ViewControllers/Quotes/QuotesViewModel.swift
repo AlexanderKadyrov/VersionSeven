@@ -55,6 +55,8 @@ extension QuotesViewModel: QuotesServiceDelegate {
     func didReceive(quotes: [Quote]) {
         let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
         let sorted = cellViewModels.sorted(like: identifiers, keyPath: \.quote.c)
-        tabloidViewModel.sections = [sorted]
+        tabloidViewModel.reload(sections: [
+            Section(index: .zero, elements: sorted)
+        ])
     }
 }
