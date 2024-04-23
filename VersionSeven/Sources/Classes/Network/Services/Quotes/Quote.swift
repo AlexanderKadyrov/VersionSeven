@@ -35,25 +35,15 @@ struct Quote: Codable, Hashable {
     let minStep: Float?
     
     func merged(with newQuote: Quote) throws -> Quote {
-        let oldQuote = self
-        let oldData = try JSONEncoder().encode(oldQuote)
-        let oldObject = try JSON(data: oldData)
-        
-        let newData = try JSONEncoder().encode(newQuote)
-        let newObject = try JSON(data: newData)
-        
-        let merged = try oldObject.merged(with: newObject)
-        let mergedData = try merged.rawData()
-        var mergedQuote = try JSONDecoder().decode(Quote.self, from: mergedData)
-        
-        if mergedQuote.ltp.rawValue > oldQuote.ltp.rawValue {
-            mergedQuote.ltp = .up(mergedQuote.ltp.rawValue)
-        } else if mergedQuote.ltp.rawValue < oldQuote.ltp.rawValue {
-            mergedQuote.ltp = .down(mergedQuote.ltp.rawValue)
-        } else {
-            mergedQuote.ltp = .equal(mergedQuote.ltp.rawValue)
-        }
-        
+        let mergedQuote = Quote(
+            c: newQuote.c,
+            pcp: newQuote.pcp,
+            ltr: ltr,
+            name: name,
+            ltp: newQuote.ltp,
+            chg: newQuote.chg,
+            minStep: minStep
+        )
         return mergedQuote
     }
 }
