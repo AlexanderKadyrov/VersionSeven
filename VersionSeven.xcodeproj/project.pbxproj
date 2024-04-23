@@ -565,7 +565,7 @@
 			repositoryURL = "https://github.com/AlexanderKadyrov/TabloidView";
 			requirement = {
 				kind = exactVersion;
-				version = 3.0.0;
+				version = 3.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
