@@ -67,6 +67,17 @@ final class QuotesTabloidCellView: TabloidCellView {
         return label
     }()
     
+    override var cellViewModel: TabloidCellViewModel? {
+        didSet {
+            guard let cellViewModel = cellViewModel as? QuotesTabloidCellViewModel else { return }
+            chgView.chg = cellViewModel.quote.chg
+            pcpView.pcp = cellViewModel.quote.pcp
+            ltpView.ltp = cellViewModel.quote.ltp
+            cView.text = cellViewModel.quote.c
+            nameView.text = cellViewModel.text
+        }
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureViews()
@@ -88,15 +99,5 @@ final class QuotesTabloidCellView: TabloidCellView {
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ContainerView.insets.left),
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.ContainerView.insets.top)
         ])
-    }
-    
-    override func fill(viewModel: TabloidCellViewModel?) {
-        super.fill(viewModel: viewModel)
-        guard let viewModel = viewModel as? QuotesTabloidCellViewModel else { return }
-        chgView.chg = viewModel.quote.chg
-        pcpView.pcp = viewModel.quote.pcp
-        ltpView.ltp = viewModel.quote.ltp
-        cView.text = viewModel.quote.c
-        nameView.text = viewModel.text
     }
 }
