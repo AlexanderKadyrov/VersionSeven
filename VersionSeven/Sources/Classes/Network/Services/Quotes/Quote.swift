@@ -41,8 +41,7 @@ struct Quote: Codable, Hashable {
     /// Минимальный шаг цены
     let minStep: Float?
     
-    func merged(with newQuote: Quote) -> Quote? {
-        guard !newQuote.isEmpty else { return nil }
+    func merged(with newQuote: Quote) -> Quote {
         return Quote(
             c: c,
             pcp: newQuote.pcp,
