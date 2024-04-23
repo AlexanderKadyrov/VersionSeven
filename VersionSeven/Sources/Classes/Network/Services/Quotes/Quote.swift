@@ -18,7 +18,7 @@ struct Quote: Codable, Hashable {
     }
     
     /// Тикер
-    let c: String?
+    let c: String
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
     let pcp: Float?
@@ -40,7 +40,6 @@ struct Quote: Codable, Hashable {
     
     func merged(with newQuote: Quote) throws -> Quote {
         guard
-            let c = newQuote.c,
             let pcp = newQuote.pcp,
             let ltp = newQuote.ltp,
             let chg = newQuote.chg
