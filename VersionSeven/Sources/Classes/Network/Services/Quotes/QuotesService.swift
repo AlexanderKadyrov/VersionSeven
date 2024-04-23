@@ -45,9 +45,13 @@ extension QuotesService: WebSocketClientDelegate {
             
             for newQuote in result {
                 if let oldQuote = quotes.first(where: { $0.c == newQuote.c }) {
-                    let mergedQuote = try oldQuote.merged(with: newQuote)
-                    quotes.remove(oldQuote)
-                    quotes.insert(mergedQuote)
+                    do {
+                        let mergedQuote = try oldQuote.merged(with: newQuote)
+                        quotes.remove(oldQuote)
+                        quotes.insert(mergedQuote)
+                    } catch {
+                        
+                    }
                 } else {
                     quotes.insert(newQuote)
                 }
