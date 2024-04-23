@@ -7,6 +7,10 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
         static let cellIdentifier = "QuotesTabloidCellView"
     }
     
+    override var differenceIdentifier: String {
+        return quote.c
+    }
+    
     let quote: Quote
     let text: String
     
@@ -16,5 +20,10 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
             .joined(separator: " | ")
         self.quote = quote
         super.init(cellIdentifier: Constants.cellIdentifier)
+    }
+    
+    override func isContentEqual(to source: TabloidCellViewModel) -> Bool {
+        guard let source = source as? QuotesTabloidCellViewModel else { return false }
+        return source.quote == quote
     }
 }
