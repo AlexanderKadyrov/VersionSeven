@@ -14,7 +14,9 @@ struct Quote: Codable, Hashable {
     }
     
     var isEmpty: Bool {
-        return ltp == nil
+        return [pcp, ltp, chg]
+            .compactMap { $0 }
+            .isEmpty
     }
     
     /// Тикер
@@ -44,7 +46,7 @@ struct Quote: Codable, Hashable {
             pcp: newQuote.pcp ?? pcp,
             ltr: ltr,
             name: name,
-            ltp: newQuote.ltp,
+            ltp: newQuote.ltp ?? ltp,
             chg: newQuote.chg ?? chg,
             minStep: minStep
         )
