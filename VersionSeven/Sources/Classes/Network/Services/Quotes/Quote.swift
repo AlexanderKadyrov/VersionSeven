@@ -3,6 +3,10 @@ import SwiftyJSON
 
 struct Quote: Codable, Hashable {
     
+    enum Errors: Error {
+        case emptyQuote
+    }
+    
     enum CodingKeys : String, CodingKey {
         case c
         case pcp
@@ -14,7 +18,7 @@ struct Quote: Codable, Hashable {
     }
     
     /// Тикер
-    let c: String
+    let c: String?
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
     let pcp: Float?
@@ -35,15 +39,25 @@ struct Quote: Codable, Hashable {
     let minStep: Float?
     
     func merged(with newQuote: Quote) throws -> Quote {
+        guard
+            let c = newQuote.c,
+            let pcp = newQuote.pcp,
+            let ltp = newQuote.ltp,
+            let chg = newQuote.chg
+        else {
+            throw Errors.emptyQuote
+        }
+        
         let mergedQuote = Quote(
-            c: newQuote.c,
-            pcp: newQuote.pcp,
+            c: c,
+            pcp: pcp,
             ltr: ltr,
             name: name,
-            ltp: newQuote.ltp,
-            chg: newQuote.chg,
+            ltp: ltp,
+            chg: chg,
             minStep: minStep
         )
+        
         return mergedQuote
     }
 }
