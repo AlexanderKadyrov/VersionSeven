@@ -17,7 +17,7 @@ final class LTPView: UIView {
         return label
     }()
     
-    var ltp: LTP = .equal(.zero) {
+    var ltp: LTP? {
         didSet {
             set(ltp: ltp)
         }
@@ -44,21 +44,37 @@ final class LTPView: UIView {
         ])
     }
     
-    private func set(ltp: LTP) {
+    private func set(ltp: LTP?) {
+        guard let ltp = ltp else {
+            setEqual(value: .zero)
+            return
+        }
         switch ltp {
         case .equal(let value):
-            backgroundColor = .clear
-            textLabel.textColor = .black
-            set(value: value)
+            setEqual(value: value)
         case .down(let value):
-            backgroundColor = .red
-            textLabel.textColor = .white
-            set(value: value)
+            setDown(value: value)
         case .up(let value):
-            backgroundColor = .systemGreen
-            textLabel.textColor = .white
-            set(value: value)
+            setUp(value: value)
         }
+    }
+    
+    private func setEqual(value: Float) {
+        backgroundColor = .clear
+        textLabel.textColor = .black
+        set(value: value)
+    }
+    
+    private func setDown(value: Float) {
+        backgroundColor = .red
+        textLabel.textColor = .white
+        set(value: value)
+    }
+    
+    private func setUp(value: Float) {
+        backgroundColor = .systemGreen
+        textLabel.textColor = .white
+        set(value: value)
     }
     
     private func set(value: Float) {
