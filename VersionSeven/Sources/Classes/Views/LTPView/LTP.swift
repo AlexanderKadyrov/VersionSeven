@@ -34,4 +34,20 @@ enum LTP: Codable, Hashable, Comparable {
             try container.encode(value)
         }
     }
+    
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+    
+    static func <= (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue <= rhs.rawValue
+    }
+    
+    static func >= (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue >= rhs.rawValue
+    }
+    
+    static func > (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue > rhs.rawValue
+    }
 }
