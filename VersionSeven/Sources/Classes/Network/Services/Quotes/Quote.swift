@@ -3,10 +3,6 @@ import SwiftyJSON
 
 struct Quote: Codable, Hashable {
     
-    enum Errors: Error {
-        case emptyQuote
-    }
-    
     enum CodingKeys : String, CodingKey {
         case c
         case pcp
@@ -15,6 +11,13 @@ struct Quote: Codable, Hashable {
         case ltp
         case chg
         case minStep = "min_step"
+    }
+    
+    var isEmpty: Bool {
+        let sum = [pcp, ltp, chg]
+            .compactMap { $0 }
+            .reduce(0, +)
+        return sum == .zero
     }
     
     /// Тикер
@@ -38,25 +41,16 @@ struct Quote: Codable, Hashable {
     /// Минимальный шаг цены
     let minStep: Float?
     
-    func merged(with newQuote: Quote) throws -> Quote {
-        guard
-            let pcp = newQuote.pcp,
-            let ltp = newQuote.ltp,
-            let chg = newQuote.chg
-        else {
-            throw Errors.emptyQuote
-        }
-        
-        let mergedQuote = Quote(
+    func merged(with newQuote: Quote) -> Quote? {
+        guard !newQuote.isEmpty else { return nil }
+        return Quote(
             c: c,
-            pcp: pcp,
+            pcp: newQuote.pcp,
             ltr: ltr,
             name: name,
-            ltp: ltp,
-            chg: chg,
+            ltp: newQuote.ltp,
+            chg: newQuote.chg,
             minStep: minStep
         )
-        
-        return mergedQuote
     }
 }
