@@ -13,7 +13,6 @@
 		1156A24E2BD448C80029DA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24C2BD448C80029DA44 /* LaunchScreen.storyboard */; };
 		1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A25C2BD44D7A0029DA44 /* Starscream */; };
 		1156A2612BD44E040029DA44 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2602BD44E040029DA44 /* WebSocketClient.swift */; };
-		1156A2642BD4736F0029DA44 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2632BD4736F0029DA44 /* SwiftyJSON */; };
 		1156A2682BD477FF0029DA44 /* QuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2672BD477FF0029DA44 /* QuotesService.swift */; };
 		1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26A2BD478320029DA44 /* QuotesRequest.swift */; };
 		1156A26D2BD4785C0029DA44 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* Quote.swift */; };
@@ -60,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1156A2642BD4736F0029DA44 /* SwiftyJSON in Frameworks */,
 				1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */,
 				1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */,
 			);
@@ -250,7 +248,6 @@
 			name = VersionSeven;
 			packageProductDependencies = (
 				1156A25C2BD44D7A0029DA44 /* Starscream */,
-				1156A2632BD4736F0029DA44 /* SwiftyJSON */,
 				1156A2742BD5911F0029DA44 /* TabloidView */,
 			);
 			productName = VersionSeven;
@@ -283,7 +280,6 @@
 			mainGroup = 1156A2352BD448C60029DA44;
 			packageReferences = (
 				1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */,
-				1156A2622BD4736F0029DA44 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */,
 			);
 			productRefGroup = 1156A23F2BD448C60029DA44 /* Products */;
@@ -552,14 +548,6 @@
 				version = 4.0.8;
 			};
 		};
-		1156A2622BD4736F0029DA44 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.2;
-			};
-		};
 		1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AlexanderKadyrov/TabloidView";
@@ -575,11 +563,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */;
 			productName = Starscream;
-		};
-		1156A2632BD4736F0029DA44 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1156A2622BD4736F0029DA44 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 		1156A2742BD5911F0029DA44 /* TabloidView */ = {
 			isa = XCSwiftPackageProductDependency;
