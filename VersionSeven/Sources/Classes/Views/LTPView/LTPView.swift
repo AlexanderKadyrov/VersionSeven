@@ -4,7 +4,7 @@ import UIKit
 final class LTPView: UIView {
     
     enum Constants {
-        static let cornerRadius: CGFloat = 6
+        static let cornerRadius: CGFloat = 4
         enum TextLabel {
             static let insets = UIEdgeInsets(top: .zero, left: 4, bottom: .zero, right: 4)
         }
