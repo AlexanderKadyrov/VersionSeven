@@ -13,12 +13,6 @@ struct Quote: Codable, Hashable {
         case minStep = "min_step"
     }
     
-    var isEmpty: Bool {
-        return [pcp, ltp, chg]
-            .compactMap { $0 }
-            .isEmpty
-    }
-    
     /// Тикер
     let c: String
     
@@ -32,7 +26,7 @@ struct Quote: Codable, Hashable {
     let name: String?
     
     /// Цена последней сделки
-    let ltp: Float?
+    let ltp: LTP?
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
     let chg: Float?
@@ -46,9 +40,24 @@ struct Quote: Codable, Hashable {
             pcp: newQuote.pcp ?? pcp,
             ltr: ltr,
             name: name,
-            ltp: newQuote.ltp ?? ltp,
+            ltp: ltpCompare(newValue: newQuote.ltp, oldValue: ltp),
             chg: newQuote.chg ?? chg,
             minStep: minStep
         )
+    }
+    
+    private func ltpCompare(newValue: LTP?, oldValue: LTP?) -> LTP? {
+        if let newValue = newValue, let oldValue = oldValue {
+            if newValue > oldValue {
+                return .up(newValue.rawValue)
+            } else if newValue < oldValue {
+                return .down(newValue.rawValue)
+            } else {
+                return .equal(newValue.rawValue)
+            }
+        } else if let merged = newValue ?? oldValue {
+            return .equal(merged.rawValue)
+        }
+        return nil
     }
 }
