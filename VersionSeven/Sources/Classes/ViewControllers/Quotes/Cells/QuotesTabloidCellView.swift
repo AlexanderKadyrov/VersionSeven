@@ -5,6 +5,7 @@ import UIKit
 final class QuotesTabloidCellView: TabloidCellView {
     
     enum Constants {
+        static let separatorInset = UIEdgeInsets(top: .zero, left: 12, bottom: .zero, right: .zero)
         enum ContainerView {
             static let insets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
             static let spacing: CGFloat = 4
@@ -89,6 +90,7 @@ final class QuotesTabloidCellView: TabloidCellView {
     }
     
     private func configureViews() {
+        separatorInset = Constants.separatorInset
         backgroundColor = .white
         selectionStyle = .none
         
