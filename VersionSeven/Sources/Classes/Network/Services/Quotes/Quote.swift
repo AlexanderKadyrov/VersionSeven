@@ -14,10 +14,7 @@ struct Quote: Codable, Hashable {
     }
     
     var isEmpty: Bool {
-        let sum = [pcp, ltp, chg]
-            .compactMap { $0 }
-            .reduce(0, +)
-        return sum == .zero
+        return ltp == nil
     }
     
     /// Тикер
@@ -44,11 +41,11 @@ struct Quote: Codable, Hashable {
     func merged(with newQuote: Quote) -> Quote {
         return Quote(
             c: c,
-            pcp: newQuote.pcp,
+            pcp: newQuote.pcp ?? pcp,
             ltr: ltr,
             name: name,
             ltp: newQuote.ltp,
-            chg: newQuote.chg,
+            chg: newQuote.chg ?? chg,
             minStep: minStep
         )
     }
