@@ -2,11 +2,11 @@ import Foundation
 
 enum LTP: Codable, Hashable, Comparable {
     
-    case equal(Float)
-    case down(Float)
-    case up(Float)
+    case equal(Double)
+    case down(Double)
+    case up(Double)
     
-    var rawValue: Float {
+    var rawValue: Double {
         switch self {
         case .equal(let value):
             return value
@@ -19,7 +19,7 @@ enum LTP: Codable, Hashable, Comparable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        let value = try container.decode(Float.self)
+        let value = try container.decode(Double.self)
         self = .equal(value)
     }
     
