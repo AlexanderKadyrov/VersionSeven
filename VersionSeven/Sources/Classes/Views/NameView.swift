@@ -5,8 +5,10 @@ final class NameView: UIView {
     
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
         return label
     }()
