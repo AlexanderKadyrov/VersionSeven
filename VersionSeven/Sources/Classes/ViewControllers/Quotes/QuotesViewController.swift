@@ -7,8 +7,12 @@ final class QuotesViewController: UIViewController {
         let view = TabloidView(style: .plain)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(cellIdentifiers: ["QuotesTabloidCellView"])
+        view.contentInsetAdjustmentBehavior = .never
         view.separatorStyle = .singleLine
         view.backgroundColor = .white
+        if #available(iOS 15.0, *) {
+            view.sectionHeaderTopPadding = .zero
+        }
         return view
     }()
     
@@ -30,6 +34,7 @@ final class QuotesViewController: UIViewController {
     }
     
     private func configureViews() {
+        edgesForExtendedLayout = []
         view.backgroundColor = .white
         view.addSubview(tabloidView)
         NSLayoutConstraint.activate([
