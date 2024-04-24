@@ -20,8 +20,13 @@ final class QuotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureToolbar()
         configureViews()
         viewModel?.viewDidLoad()
+    }
+    
+    private func configureToolbar() {
+        title = "Quotes"
     }
     
     private func configureViews() {
