@@ -12,7 +12,9 @@ final class ImageView: UIView {
     
     var viewModel: ImageViewModel? {
         didSet {
-            imageView.kf.setImage(with: viewModel?.url)
+            imageView.kf.setImage(with: viewModel?.url) { [weak self] result in
+                self?.viewModel?.set(result: result)
+            }
         }
     }
     
