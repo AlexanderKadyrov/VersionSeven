@@ -12,8 +12,10 @@ final class LTPView: UIView {
     
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
