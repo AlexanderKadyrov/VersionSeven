@@ -38,6 +38,12 @@ final class QuotesTabloidCellView: TabloidCellView {
         return view
     }()
     
+    private let logoImageView: ImageView = {
+        let view = ImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let cView: CView = {
         let label = CView()
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -4,6 +4,7 @@ import Foundation
 final class QuotesTabloidCellViewModel: TabloidCellViewModel {
     
     enum Constants {
+        static let path = "https://tradernet.com/logos/get-logo-by-ticker?ticker="
         static let cellIdentifier = "QuotesTabloidCellView"
     }
     
@@ -11,10 +12,12 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
         return quote.c
     }
     
+    let logoImageViewModel: ImageViewModel?
     let quote: Quote
     let text: String
     
     init(quote: Quote) {
+        self.logoImageViewModel = ImageViewModel(url: Self.logoUrl(c: quote.c))
         self.text = [quote.ltr, quote.name]
             .compactMap { $0 }
             .joined(separator: " | ")
@@ -25,5 +28,10 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
     override func isContentEqual(to source: TabloidCellViewModel) -> Bool {
         guard let source = source as? QuotesTabloidCellViewModel else { return false }
         return source.quote == quote
+    }
+    
+    private static func logoUrl(c: String) -> URL? {
+        let c = c.lowercased()
+        return URL(string: "\(Constants.path)\(c)")
     }
 }
