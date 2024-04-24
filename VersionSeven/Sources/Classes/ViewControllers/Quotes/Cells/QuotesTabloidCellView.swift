@@ -11,13 +11,13 @@ final class QuotesTabloidCellView: TabloidCellView {
             static let spacing: CGFloat = 4
         }
         enum LogoImageView {
-            static let size = CGSize(width: 24, height: 24)
+            static let size = CGSize(width: 20, height: 20)
         }
         enum BottomView {
             static let spacing: CGFloat = 8
         }
         enum TopView {
-            static let spacing: CGFloat = 8
+            static let spacing: CGFloat = 4
         }
     }
     
