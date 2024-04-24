@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1121C7CD2BD99FF200C37C40 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7CC2BD99FF200C37C40 /* ImageView.swift */; };
 		1121C7CF2BD9A00100C37C40 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7CE2BD9A00100C37C40 /* ImageViewModel.swift */; };
+		1121C7D22BD9A1BD00C37C40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1121C7D12BD9A1BD00C37C40 /* Kingfisher */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1121C7D22BD9A1BD00C37C40 /* Kingfisher in Frameworks */,
 				1156A25D2BD44D7A0029DA44 /* Starscream in Frameworks */,
 				1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */,
 			);
@@ -263,6 +265,7 @@
 			packageProductDependencies = (
 				1156A25C2BD44D7A0029DA44 /* Starscream */,
 				1156A2742BD5911F0029DA44 /* TabloidView */,
+				1121C7D12BD9A1BD00C37C40 /* Kingfisher */,
 			);
 			productName = VersionSeven;
 			productReference = 1156A23E2BD448C60029DA44 /* VersionSeven.app */;
@@ -295,6 +298,7 @@
 			packageReferences = (
 				1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */,
 				1156A2732BD5911F0029DA44 /* XCRemoteSwiftPackageReference "TabloidView" */,
+				1121C7D02BD9A1BC00C37C40 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1156A23F2BD448C60029DA44 /* Products */;
 			projectDirPath = "";
@@ -556,6 +560,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1121C7D02BD9A1BC00C37C40 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/daltoniam/Starscream.git";
@@ -575,6 +587,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1121C7D12BD9A1BD00C37C40 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1121C7D02BD9A1BC00C37C40 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		1156A25C2BD44D7A0029DA44 /* Starscream */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1156A25B2BD44D7A0029DA44 /* XCRemoteSwiftPackageReference "Starscream" */;
