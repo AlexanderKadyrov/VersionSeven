@@ -11,6 +11,7 @@ final class QuotesTabloidCellView: TabloidCellView {
             static let spacing: CGFloat = 4
         }
         enum LogoImageView {
+            static let sizeOnePixel = CGSize(width: 1, height: 1)
             static let size = CGSize(width: 20, height: 20)
         }
         enum BottomView {
@@ -84,6 +85,7 @@ final class QuotesTabloidCellView: TabloidCellView {
     override var cellViewModel: TabloidCellViewModel? {
         didSet {
             guard let cellViewModel = cellViewModel as? QuotesTabloidCellViewModel else { return }
+            cellViewModel.logoImageViewModel?.delegate = self
             logoImageView.viewModel = cellViewModel.logoImageViewModel
             pcpView.pcp = cellViewModel.quote.pcp
             ltpView.ltp = cellViewModel.quote.ltp
@@ -118,5 +120,17 @@ final class QuotesTabloidCellView: TabloidCellView {
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.ContainerView.insets.left),
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.ContainerView.insets.top)
         ])
+    }
+}
+
+extension QuotesTabloidCellView: ImageViewModelDelegate {
+    func didReceive(result: Result<UIImage, Error>) {
+        switch result {
+        case .success(let image):
+            let isHidden = image.size == Constants.LogoImageView.sizeOnePixel ? true : false
+            logoImageView.isHidden = isHidden
+        case .failure:
+            logoImageView.isHidden = true
+        }
     }
 }
