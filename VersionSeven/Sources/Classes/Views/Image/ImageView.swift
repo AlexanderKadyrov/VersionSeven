@@ -10,9 +10,9 @@ final class ImageView: UIView {
         return view
     }()
     
-    var imageViewModel: ImageViewModel? {
+    var viewModel: ImageViewModel? {
         didSet {
-            imageView.kf.setImage(with: imageViewModel?.url)
+            imageView.kf.setImage(with: viewModel?.url)
         }
     }
     
