@@ -27,36 +27,12 @@ struct Quote: Codable, Hashable {
     
     /// Цена последней сделки
     let ltp: LTP?
-    let ltpRounded: LTP?
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
     let chg: Double?
     
     /// Минимальный шаг цены
     let minStep: Double?
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.c = try container.decode(String.self, forKey: .c)
-        self.pcp = try container.decodeIfPresent(Double.self, forKey: .pcp)
-        self.ltr = try container.decodeIfPresent(String.self, forKey: .ltr)
-        self.name = try container.decodeIfPresent(String.self, forKey: .name)
-        self.ltp = try container.decodeIfPresent(LTP.self, forKey: .ltp)
-        self.chg = try container.decodeIfPresent(Double.self, forKey: .chg)
-        self.minStep = try container.decodeIfPresent(Double.self, forKey: .minStep)
-        self.ltpRounded = Self.ltpRounded(ltp: ltp, minStep: minStep)
-    }
-    
-    init(c: String, pcp: Double?, ltr: String?, name: String?, ltp: LTP?, chg: Double?, minStep: Double?) {
-        self.c = c
-        self.pcp = pcp
-        self.ltr = ltr
-        self.name = name
-        self.ltp = ltp
-        self.chg = chg
-        self.minStep = minStep
-        self.ltpRounded = Self.ltpRounded(ltp: ltp, minStep: minStep)
-    }
     
     func merged(with newQuote: Quote) -> Quote {
         return Quote(
@@ -83,9 +59,5 @@ struct Quote: Codable, Hashable {
             return .equal(merged.rawValue)
         }
         return nil
-    }
-    
-    private static func ltpRounded(ltp: LTP?, minStep: Double?) -> LTP? {
-        return ltp
     }
 }
