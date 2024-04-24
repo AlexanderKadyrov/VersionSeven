@@ -17,7 +17,7 @@ struct Quote: Codable, Hashable {
     let c: String
     
     /// Изменение в процентах относительно цены закрытия предыдущей торговой сессии
-    let pcp: Float?
+    let pcp: Double?
     
     /// Биржа последней сделки
     let ltr: String?
@@ -29,10 +29,10 @@ struct Quote: Codable, Hashable {
     let ltp: LTP?
     
     /// Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
-    let chg: Float?
+    let chg: Double?
     
     /// Минимальный шаг цены
-    let minStep: Float?
+    let minStep: Double?
     
     func merged(with newQuote: Quote) -> Quote {
         return Quote(
