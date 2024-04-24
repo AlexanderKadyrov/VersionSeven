@@ -10,6 +10,7 @@
 		1121C7CD2BD99FF200C37C40 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7CC2BD99FF200C37C40 /* ImageView.swift */; };
 		1121C7CF2BD9A00100C37C40 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7CE2BD9A00100C37C40 /* ImageViewModel.swift */; };
 		1121C7D22BD9A1BD00C37C40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1121C7D12BD9A1BD00C37C40 /* Kingfisher */; };
+		1121C7D52BD9C87600C37C40 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7D42BD9C87600C37C40 /* NavigationController.swift */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		1121C7CC2BD99FF200C37C40 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1121C7CE2BD9A00100C37C40 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		1121C7D42BD9C87600C37C40 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1156A23E2BD448C60029DA44 /* VersionSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersionSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156A2412BD448C60029DA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156A2452BD448C60029DA44 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				1156A2412BD448C60029DA44 /* AppDelegate.swift */,
+				1121C7D42BD9C87600C37C40 /* NavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				1156A28B2BD695BD0029DA44 /* Array+.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 				1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */,
+				1121C7D52BD9C87600C37C40 /* NavigationController.swift in Sources */,
 				1121C7CF2BD9A00100C37C40 /* ImageViewModel.swift in Sources */,
 				1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */,
 			);

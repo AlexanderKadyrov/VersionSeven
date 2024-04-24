@@ -14,10 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func rootViewController() -> QuotesViewController {
+    private func rootViewController() -> UINavigationController {
         let viewController = QuotesViewController()
         let viewModel = QuotesViewModel()
         viewController.viewModel = viewModel
-        return viewController
+        let navigationController = NavigationController(
+            rootViewController: viewController
+        )
+        return navigationController
     }
 }
