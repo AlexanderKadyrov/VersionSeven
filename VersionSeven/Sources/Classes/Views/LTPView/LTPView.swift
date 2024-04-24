@@ -59,25 +59,25 @@ final class LTPView: UIView {
         }
     }
     
-    private func setEqual(value: Float) {
+    private func setEqual(value: Double) {
         backgroundColor = .clear
         textLabel.textColor = .black
         set(value: value)
     }
     
-    private func setDown(value: Float) {
+    private func setDown(value: Double) {
         backgroundColor = .red
         textLabel.textColor = .white
         set(value: value)
     }
     
-    private func setUp(value: Float) {
+    private func setUp(value: Double) {
         backgroundColor = .systemGreen
         textLabel.textColor = .white
         set(value: value)
     }
     
-    private func set(value: Float) {
+    private func set(value: Double) {
         textLabel.text = "\(value)"
     }
 }
