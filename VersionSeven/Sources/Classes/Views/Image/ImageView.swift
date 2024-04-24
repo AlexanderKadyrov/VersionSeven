@@ -7,7 +7,6 @@ final class ImageView: UIView {
     private let imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleAspectFit
         return view
     }()
     
