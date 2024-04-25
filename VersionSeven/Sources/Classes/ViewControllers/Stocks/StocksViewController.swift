@@ -51,6 +51,8 @@ final class StocksViewController: UIViewController {
     
     @objc
     private func actionDone() {
-        dismiss(animated: true)
+        dismiss(animated: true) { [weak self] in
+            self?.viewModel?.actionDone()
+        }
     }
 }
