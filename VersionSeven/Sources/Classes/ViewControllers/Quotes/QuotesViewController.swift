@@ -50,11 +50,11 @@ final class QuotesViewController: UIViewController {
     
     @objc
     private func actionEdit() {
-        present(stocksViewController(), animated: true)
+        guard let stocks = viewModel?.stocks else { return }
+        present(stocksViewController(stocks: stocks), animated: true)
     }
     
-    private func stocksViewController() -> UINavigationController {
-        let stocks = (viewModel?.tickers ?? []).map { Stock(ticker: $0, selected: true) }
+    private func stocksViewController(stocks: Set<Stock>) -> UINavigationController {
         let viewModel = StocksViewModel(stocks: stocks)
         let viewController = StocksViewController()
         viewController.viewModel = viewModel
