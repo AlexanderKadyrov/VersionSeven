@@ -17,6 +17,7 @@ final class WebSocketClient {
     
     private let webSocket: WebSocket
     
+    private(set) var isConnected: Bool = false
     weak var delegate: WebSocketClientDelegate?
     
     init?(url: URL?) {
@@ -44,15 +45,20 @@ extension WebSocketClient: WebSocketDelegate {
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
         switch event {
         case .connected:
+            isConnected = true
             delegate?.didConnected(webSocketClient: self)
         case .disconnected:
+            isConnected = false
             delegate?.didDisconnected(webSocketClient: self)
         case .text(let text):
             guard let data = text.data(using: .utf8) else { return }
             delegate?.didReceive(data: data, webSocketClient: self)
         case .binary(let data):
             delegate?.didReceive(data: data, webSocketClient: self)
+        case .cancelled:
+            isConnected = false
         case .error(let error):
+            isConnected = false
             guard let error = error else { return }
             delegate?.didReceive(error: error, webSocketClient: self)
         default:
