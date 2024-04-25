@@ -1,5 +1,4 @@
 import Foundation
-import SwiftyJSON
 
 protocol QuotesServiceDelegate: AnyObject {
     func didReceive(quotes: [Quote])
