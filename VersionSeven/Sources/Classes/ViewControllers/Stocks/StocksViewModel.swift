@@ -12,31 +12,35 @@ final class StocksViewModel {
     weak var delegate: StocksViewModelDelegate?
     let tabloidViewModel = TabloidViewModel()
     
+    var hasEnabledOneStock: Bool {
+        return stocks.contains(where: { $0.selected })
+    }
+    
     init(stocks: Set<Stock>) {
         self.stocks = stocks
     }
     
     func viewDidLoad() {
-        reloadSections()
+        reload()
     }
     
     func actionUndo() {
         let items = stocks.map { Stock(ticker: $0.ticker, selected: false) }
         stocks = Set(items)
-        reloadSections()
+        reload()
     }
     
     func actionRedo() {
         let items = stocks.map { Stock(ticker: $0.ticker, selected: true) }
         stocks = Set(items)
-        reloadSections()
+        reload()
     }
     
     func actionDone() {
         delegate?.set(stocks: stocks)
     }
     
-    private func reloadSections() {
+    private func reload() {
         var elements: [StockTabloidCellViewModel] = []
         for stock in stocks {
             let cellViewModel = StockTabloidCellViewModel(stock: stock)
@@ -61,6 +65,6 @@ extension StocksViewModel: TabloidCellViewModelDelegate {
         let newStock = Stock(ticker: oldStock.ticker, selected: !oldStock.selected)
         stocks.remove(oldStock)
         stocks.insert(newStock)
-        reloadSections()
+        reload()
     }
 }
