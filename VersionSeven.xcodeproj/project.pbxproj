@@ -17,6 +17,7 @@
 		1121C7DF2BDAEA1700C37C40 /* StockTabloidCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7DE2BDAEA1700C37C40 /* StockTabloidCellViewModel.swift */; };
 		1121C7E22BDAEA9300C37C40 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7E12BDAEA9300C37C40 /* Stock.swift */; };
 		1121C7E42BDAFCA700C37C40 /* stocks.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121C7E32BDAFCA700C37C40 /* stocks.json */; };
+		1121C7E82BDAFD3A00C37C40 /* StocksFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7E72BDAFD3A00C37C40 /* StocksFactory.swift */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		1121C7DE2BDAEA1700C37C40 /* StockTabloidCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTabloidCellViewModel.swift; sourceTree = "<group>"; };
 		1121C7E12BDAEA9300C37C40 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		1121C7E32BDAFCA700C37C40 /* stocks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stocks.json; sourceTree = "<group>"; };
+		1121C7E72BDAFD3A00C37C40 /* StocksFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksFactory.swift; sourceTree = "<group>"; };
 		1156A23E2BD448C60029DA44 /* VersionSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersionSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156A2412BD448C60029DA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156A2452BD448C60029DA44 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		1121C7D62BD9D88100C37C40 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				1121C7E52BDAFD0F00C37C40 /* Factories */,
 				1121C7DB2BDAE9DD00C37C40 /* Cells */,
 				1121C7D72BD9D89B00C37C40 /* StocksViewController.swift */,
 				1121C7D92BD9D8C300C37C40 /* StocksViewModel.swift */,
@@ -119,6 +122,14 @@
 				1121C7E12BDAEA9300C37C40 /* Stock.swift */,
 			);
 			path = Stocks;
+			sourceTree = "<group>";
+		};
+		1121C7E52BDAFD0F00C37C40 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				1121C7E72BDAFD3A00C37C40 /* StocksFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		1156A2352BD448C60029DA44 = {
@@ -378,6 +389,7 @@
 				1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */,
 				1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */,
 				1156A26D2BD4785C0029DA44 /* Quote.swift in Sources */,
+				1121C7E82BDAFD3A00C37C40 /* StocksFactory.swift in Sources */,
 				1121C7E22BDAEA9300C37C40 /* Stock.swift in Sources */,
 				1156A26B2BD478320029DA44 /* QuotesRequest.swift in Sources */,
 				1121C7DA2BD9D8C300C37C40 /* StocksViewModel.swift in Sources */,
