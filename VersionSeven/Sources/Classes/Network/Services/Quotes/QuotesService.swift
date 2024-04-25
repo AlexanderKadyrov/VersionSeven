@@ -29,6 +29,14 @@ final class QuotesService {
     func subscribe() {
         webSocketClient?.connect()
     }
+    
+    func send(tickers: [String]) {
+        quotes.removeAll()
+        let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
+        let request = "[\"quotes\", [\(tickers)]]"
+        guard let data = request.data(using: .utf8) else { return }
+        webSocketClient?.send(data: data)
+    }
 }
 
 extension QuotesService: WebSocketClientDelegate {
@@ -60,9 +68,6 @@ extension QuotesService: WebSocketClientDelegate {
     }
     
     func didConnected(webSocketClient: WebSocketClient) {
-        let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
-        let request = "[\"quotes\", [\(tickers)]]"
-        guard let data = request.data(using: .utf8) else { return }
-        webSocketClient.send(data: data)
+        send(tickers: tickers)
     }
 }
