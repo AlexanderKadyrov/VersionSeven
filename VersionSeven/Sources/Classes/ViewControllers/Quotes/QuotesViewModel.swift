@@ -3,7 +3,7 @@ import Foundation
 
 final class QuotesViewModel {
     
-    private let identifiers = [
+    let tickers = [
         "SP500.IDX",
         "AAPL.US",
         "RSTI",
@@ -39,7 +39,7 @@ final class QuotesViewModel {
     ]
     
     private lazy var quotesService: QuotesService = {
-        let service = QuotesService(identifiers: identifiers)
+        let service = QuotesService(tickers: tickers)
         service.delegate = self
         return service
     }()
@@ -58,7 +58,7 @@ final class QuotesViewModel {
 extension QuotesViewModel: QuotesServiceDelegate {
     func didReceive(quotes: [Quote]) {
         let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
-        let sorted = cellViewModels.sorted(like: identifiers, keyPath: \.quote.c)
+        let sorted = cellViewModels.sorted(like: tickers, keyPath: \.quote.c)
         let sections: [Section<TabloidCellViewModel>] = [
             Section(index: .zero, elements: sorted)
         ]
