@@ -13,29 +13,26 @@ final class QuotesService {
         return client
     }()
     
+    private var tickers: [String] = []
     private var quotes = Set<Quote>()
-    private let tickers: [String]
+    
+    private var isConnected: Bool {
+        return webSocketClient?.isConnected ?? false
+    }
     
     weak var delegate: QuotesServiceDelegate?
     
-    init(tickers: [String]) {
-        self.tickers = tickers
-    }
-    
-    func unsubscribe() {
-        webSocketClient?.disconnect()
-    }
-    
-    func subscribe() {
-        webSocketClient?.connect()
-    }
-    
     func send(tickers: [String]) {
+        self.tickers = tickers
         quotes.removeAll()
-        let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
-        let request = "[\"quotes\", [\(tickers)]]"
-        guard let data = request.data(using: .utf8) else { return }
-        webSocketClient?.send(data: data)
+        if isConnected {
+            let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
+            let request = "[\"quotes\", [\(tickers)]]"
+            guard let data = request.data(using: .utf8) else { return }
+            webSocketClient?.send(data: data)
+        } else {
+            webSocketClient?.connect()
+        }
     }
 }
 
