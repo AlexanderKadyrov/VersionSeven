@@ -20,6 +20,18 @@ final class StocksViewModel {
         reloadSections()
     }
     
+    func actionUndo() {
+        let items = stocks.map { Stock(ticker: $0.ticker, selected: false) }
+        stocks = Set(items)
+        reloadSections()
+    }
+    
+    func actionRedo() {
+        let items = stocks.map { Stock(ticker: $0.ticker, selected: true) }
+        stocks = Set(items)
+        reloadSections()
+    }
+    
     func actionDone() {
         delegate?.set(stocks: stocks)
     }
