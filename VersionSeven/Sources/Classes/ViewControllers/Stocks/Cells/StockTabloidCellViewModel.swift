@@ -1,10 +1,10 @@
 import TabloidView
 import Foundation
 
-final class StocksTabloidCellViewModel: TabloidCellViewModel {
+final class StockTabloidCellViewModel: TabloidCellViewModel {
     
     enum Constants {
-        static let cellIdentifier = "StocksTabloidCellView"
+        static let cellIdentifier = "StockTabloidCellView"
     }
     
     let stock: Stock

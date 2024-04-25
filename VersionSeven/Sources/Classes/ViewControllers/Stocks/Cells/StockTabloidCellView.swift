@@ -2,6 +2,6 @@ import TabloidView
 import Foundation
 import UIKit
 
-final class StocksTabloidCellView: TabloidCellView {
+final class StockTabloidCellView: TabloidCellView {
     
 }
