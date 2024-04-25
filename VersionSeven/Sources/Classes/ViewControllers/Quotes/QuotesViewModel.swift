@@ -6,7 +6,7 @@ final class QuotesViewModel {
     private(set) var stocks = Set<Stock>(StocksFactory.stocks())
     
     private lazy var quotesService: QuotesService = {
-        let service = QuotesService(tickers: stocks.map { $0.ticker })
+        let service = QuotesService(tickers: tickers())
         service.delegate = self
         return service
     }()
@@ -15,6 +15,12 @@ final class QuotesViewModel {
     
     func viewDidLoad() {
         quotesService.subscribe()
+    }
+    
+    private func tickers() -> [String] {
+        return stocks
+            .filter { $0.selected }
+            .map { $0.ticker }
     }
 }
 
@@ -35,5 +41,6 @@ extension QuotesViewModel: QuotesServiceDelegate {
 extension QuotesViewModel: StocksViewModelDelegate {
     func set(stocks: Set<Stock>) {
         self.stocks = stocks
+        quotesService.send(tickers: tickers())
     }
 }
