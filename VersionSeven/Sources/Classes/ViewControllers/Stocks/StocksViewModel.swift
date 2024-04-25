@@ -3,21 +3,43 @@ import Foundation
 
 final class StocksViewModel {
     
+    private var stocks: Set<Stock>
+    
     let tabloidViewModel = TabloidViewModel()
-    let stocks: [Stock]
     
     init(stocks: [Stock]) {
-        self.stocks = stocks
+        self.stocks = Set(stocks)
     }
     
     func viewDidLoad() {
-        let elements = stocks.map { StockTabloidCellViewModel(stock: $0) }
+        reloadSections()
+    }
+    
+    private func reloadSections() {
+        var elements: [StockTabloidCellViewModel] = []
+        for stock in stocks {
+            let cellViewModel = StockTabloidCellViewModel(stock: stock)
+            cellViewModel.delegate = self
+            elements.append(cellViewModel)
+        }
+        let sorted = elements.sorted(by: { $0.stock.ticker < $1.stock.ticker })
         let sections: [Section<TabloidCellViewModel>] = [
-            Section(index: .zero, elements: elements)
+            Section(index: .zero, elements: sorted)
         ]
         tabloidViewModel.reload(
             sections: sections,
             animation: .none
         )
+    }
+}
+
+extension StocksViewModel: TabloidCellViewModelDelegate {
+    func didSelect(cellViewModel: TabloidCellViewModel) {
+        guard let cellViewModel = cellViewModel as? StockTabloidCellViewModel else { return }
+        let oldStock = cellViewModel.stock
+        let newStock = Stock(ticker: oldStock.ticker, selected: !oldStock.selected)
+        stocks.remove(oldStock)
+        stocks.insert(newStock)
+        reloadSections()
     }
 }
