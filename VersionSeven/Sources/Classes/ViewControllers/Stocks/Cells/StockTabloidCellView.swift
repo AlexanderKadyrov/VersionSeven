@@ -14,7 +14,7 @@ final class StockTabloidCellView: TabloidCellView {
     
     private let tickerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         return label
