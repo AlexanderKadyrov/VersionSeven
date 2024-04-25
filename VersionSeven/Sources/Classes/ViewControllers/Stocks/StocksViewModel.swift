@@ -7,8 +7,8 @@ final class StocksViewModel {
     
     let tabloidViewModel = TabloidViewModel()
     
-    init(stocks: [Stock]) {
-        self.stocks = Set(stocks)
+    init(stocks: Set<Stock>) {
+        self.stocks = stocks
     }
     
     func viewDidLoad() {
