@@ -6,7 +6,7 @@ final class QuotesViewModel {
     private(set) var stocks = Set<Stock>(StocksFactory.stocks())
     
     private lazy var quotesService: QuotesService = {
-        let service = QuotesService(tickers: tickers())
+        let service = QuotesService()
         service.delegate = self
         return service
     }()
@@ -14,7 +14,7 @@ final class QuotesViewModel {
     let tabloidViewModel = TabloidViewModel()
     
     func viewDidLoad() {
-        quotesService.subscribe()
+        quotesService.send(tickers: tickers())
     }
     
     private func tickers() -> [String] {
