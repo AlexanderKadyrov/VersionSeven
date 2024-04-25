@@ -37,11 +37,11 @@ struct Quote: Codable, Hashable {
         return Quote(
             c: c,
             pcp: newQuote.pcp ?? pcp,
-            ltr: ltr,
-            name: name,
+            ltr: newQuote.ltr ?? ltr,
+            name: newQuote.name ?? name,
             ltp: ltpCompare(newValue: newQuote.ltp, oldValue: ltp),
             chg: newQuote.chg ?? chg,
-            minStep: minStep
+            minStep: newQuote.minStep ?? minStep
         )
     }
     
