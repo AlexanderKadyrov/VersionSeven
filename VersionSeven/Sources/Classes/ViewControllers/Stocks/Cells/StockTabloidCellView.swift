@@ -23,6 +23,7 @@ final class StockTabloidCellView: TabloidCellView {
     override var cellViewModel: TabloidCellViewModel? {
         didSet {
             guard let cellViewModel = cellViewModel as? StockTabloidCellViewModel else { return }
+            accessoryType = cellViewModel.stock.selected ? .checkmark : .none
             tickerLabel.text = cellViewModel.stock.ticker
         }
     }
@@ -44,7 +45,7 @@ final class StockTabloidCellView: TabloidCellView {
         
         contentView.addSubview(tickerLabel)
         NSLayoutConstraint.activate([
-            tickerLabel.heightAnchor.constraint(equalToConstant: Constants.TickerLabel.height),
+            tickerLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.TickerLabel.height),
             tickerLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.TickerLabel.insets.right),
             tickerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.TickerLabel.insets.left),
             tickerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
