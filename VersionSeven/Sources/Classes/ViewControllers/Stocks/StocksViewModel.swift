@@ -11,7 +11,14 @@ final class StocksViewModel {
     }
     
     func viewDidLoad() {
-        
+        let elements = stocks.map { StockTabloidCellViewModel(stock: $0) }
+        let sections: [Section<TabloidCellViewModel>] = [
+            Section(index: .zero, elements: elements)
+        ]
+        tabloidViewModel.reload(
+            sections: sections,
+            animation: .none
+        )
     }
     
     func actionDone() {
