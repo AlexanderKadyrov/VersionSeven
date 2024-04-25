@@ -20,8 +20,4 @@ final class StocksViewModel {
             animation: .none
         )
     }
-    
-    func actionDone() {
-        
-    }
 }
