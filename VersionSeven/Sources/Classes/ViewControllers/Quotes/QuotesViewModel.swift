@@ -22,10 +22,8 @@ final class QuotesViewModel {
             .filter { $0.selected }
             .map { $0.ticker }
     }
-}
-
-extension QuotesViewModel: QuotesServiceDelegate {
-    func didReceive(quotes: [Quote]) {
+    
+    private func reload(quotes: [Quote]) {
         let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
         let sorted = cellViewModels.sorted(by: { $0.quote.c < $1.quote.c })
         let sections: [Section<TabloidCellViewModel>] = [
@@ -38,10 +36,16 @@ extension QuotesViewModel: QuotesServiceDelegate {
     }
 }
 
+extension QuotesViewModel: QuotesServiceDelegate {
+    func didReceive(quotes: [Quote]) {
+        reload(quotes: quotes)
+    }
+}
+
 extension QuotesViewModel: StocksViewModelDelegate {
     func set(stocks: Set<Stock>) {
         self.stocks = stocks
-        didReceive(quotes: [])
+        reload(quotes: [])
         quotesService.send(tickers: tickers())
     }
 }
