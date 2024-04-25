@@ -13,7 +13,7 @@ final class StocksViewModel {
     let tabloidViewModel = TabloidViewModel()
     
     var hasEnabledOneStock: Bool {
-        return stocks.contains(where: { $0.selected })
+        return stocks.contains { $0.selected }
     }
     
     init(stocks: Set<Stock>) {
