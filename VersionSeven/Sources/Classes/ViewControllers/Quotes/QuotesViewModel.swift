@@ -49,10 +49,6 @@ final class QuotesViewModel {
     func viewDidLoad() {
         quotesService.subscribe()
     }
-    
-    func actionEdit() {
-        
-    }
 }
 
 extension QuotesViewModel: QuotesServiceDelegate {
