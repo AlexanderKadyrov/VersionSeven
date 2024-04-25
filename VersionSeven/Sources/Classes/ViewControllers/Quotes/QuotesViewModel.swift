@@ -44,6 +44,7 @@ extension QuotesViewModel: QuotesServiceDelegate {
 
 extension QuotesViewModel: StocksViewModelDelegate {
     func set(stocks: Set<Stock>) {
+        guard self.stocks != stocks else { return }
         self.stocks = stocks
         reload(quotes: [])
         quotesService.send(tickers: tickers())
