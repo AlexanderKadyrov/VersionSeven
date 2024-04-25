@@ -1,6 +1,6 @@
 import Foundation
 
-struct Stock {
+struct Stock: Hashable {
     let ticker: String
     let selected: Bool
 }
