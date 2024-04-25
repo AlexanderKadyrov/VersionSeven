@@ -1,10 +1,15 @@
 import TabloidView
 import Foundation
 
+protocol StocksViewModelDelegate: AnyObject {
+    func set(stocks: Set<Stock>)
+}
+
 final class StocksViewModel {
     
     private var stocks: Set<Stock>
     
+    weak var delegate: StocksViewModelDelegate?
     let tabloidViewModel = TabloidViewModel()
     
     init(stocks: Set<Stock>) {
@@ -13,6 +18,10 @@ final class StocksViewModel {
     
     func viewDidLoad() {
         reloadSections()
+    }
+    
+    func actionDone() {
+        delegate?.set(stocks: stocks)
     }
     
     private func reloadSections() {
