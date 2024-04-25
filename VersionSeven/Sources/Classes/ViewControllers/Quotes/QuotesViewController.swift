@@ -50,6 +50,17 @@ final class QuotesViewController: UIViewController {
     
     @objc
     private func actionEdit() {
-        viewModel?.actionEdit()
+        present(stocksViewController(), animated: true)
+    }
+    
+    private func stocksViewController() -> UINavigationController {
+        let stocks = (viewModel?.tickers ?? []).map { Stock(ticker: $0, selected: true) }
+        let viewModel = StocksViewModel(stocks: stocks)
+        let viewController = StocksViewController()
+        viewController.viewModel = viewModel
+        let navigationController = NavigationController(
+            rootViewController: viewController
+        )
+        return navigationController
     }
 }
