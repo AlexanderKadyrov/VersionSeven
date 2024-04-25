@@ -7,7 +7,7 @@ final class StocksViewController: UIViewController {
     private lazy var tabloidView: TabloidView = {
         let view = TabloidView(style: .plain)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(cellIdentifiers: ["StocksTabloidCellView"])
+        view.register(cellIdentifiers: ["StockTabloidCellView"])
         view.contentInsetAdjustmentBehavior = .never
         view.separatorStyle = .singleLine
         view.backgroundColor = .white
