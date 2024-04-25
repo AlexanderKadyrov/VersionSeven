@@ -13,13 +13,13 @@ final class QuotesService {
         return client
     }()
     
-    private let identifiers: [String]
     private var quotes = Set<Quote>()
+    private let tickers: [String]
     
     weak var delegate: QuotesServiceDelegate?
     
-    init(identifiers: [String]) {
-        self.identifiers = identifiers
+    init(tickers: [String]) {
+        self.tickers = tickers
     }
     
     func unsubscribe() {
@@ -60,7 +60,8 @@ extension QuotesService: WebSocketClientDelegate {
     }
     
     func didConnected(webSocketClient: WebSocketClient) {
-        let request = "[\"quotes\", [\(identifiers.map({ "\"" + $0 + "\"" }).joined(separator: ","))]]"
+        let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
+        let request = "[\"quotes\", [\(tickers)]]"
         guard let data = request.data(using: .utf8) else { return }
         webSocketClient.send(data: data)
     }
