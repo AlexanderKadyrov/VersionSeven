@@ -31,6 +31,9 @@ final class QuotesViewController: UIViewController {
     
     private func configureToolbar() {
         title = "Quotes"
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(actionEdit))
+        barButtonItem.tintColor = .black
+        navigationItem.rightBarButtonItems = [barButtonItem]
     }
     
     private func configureViews() {
@@ -43,5 +46,10 @@ final class QuotesViewController: UIViewController {
             tabloidView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tabloidView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
+    }
+    
+    @objc
+    private func actionEdit() {
+        viewModel?.actionEdit()
     }
 }
