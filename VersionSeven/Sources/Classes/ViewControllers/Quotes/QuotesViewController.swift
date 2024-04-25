@@ -55,12 +55,13 @@ final class QuotesViewController: UIViewController {
     }
     
     private func stocksViewController(stocks: Set<Stock>) -> UINavigationController {
-        let viewModel = StocksViewModel(stocks: stocks)
-        let viewController = StocksViewController()
-        viewController.viewModel = viewModel
+        let stocksViewModel = StocksViewModel(stocks: stocks)
+        let stocksViewController = StocksViewController()
+        stocksViewController.viewModel = stocksViewModel
         let navigationController = NavigationController(
-            rootViewController: viewController
+            rootViewController: stocksViewController
         )
+        stocksViewModel.delegate = viewModel
         return navigationController
     }
 }

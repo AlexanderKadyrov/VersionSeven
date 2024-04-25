@@ -31,3 +31,9 @@ extension QuotesViewModel: QuotesServiceDelegate {
         )
     }
 }
+
+extension QuotesViewModel: StocksViewModelDelegate {
+    func set(stocks: Set<Stock>) {
+        self.stocks = stocks
+    }
+}
