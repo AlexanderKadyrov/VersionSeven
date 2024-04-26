@@ -3,7 +3,7 @@ import Foundation
 
 final class QuotesViewModel {
     
-    private(set) var stocks = Set<Stock>(StocksFactory.stocks())
+    private(set) var stocks = Set<Stock>(StocksFactory().stocks())
     
     private lazy var quotesService: QuotesService = {
         let service = QuotesService()
