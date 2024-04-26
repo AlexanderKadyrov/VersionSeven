@@ -30,6 +30,7 @@
 		1141A06D2BDC408B00C11DE3 /* AAPL.US.2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1141A06A2BDC408B00C11DE3 /* AAPL.US.2.json */; };
 		1141A06E2BDC408B00C11DE3 /* AAPL.US.3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1141A06B2BDC408B00C11DE3 /* AAPL.US.3.json */; };
 		1141A0712BDC42F700C11DE3 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A0702BDC42F700C11DE3 /* Bundle+.swift */; };
+		1141A0722BDC445F00C11DE3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26C2BD4785C0029DA44 /* Quote.swift */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -522,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1141A0722BDC445F00C11DE3 /* Quote.swift in Sources */,
 				1141A0712BDC42F700C11DE3 /* Bundle+.swift in Sources */,
 				1141A05C2BDC3DA300C11DE3 /* QuotesFactoryTests.swift in Sources */,
 				1141A0622BDC3E6C00C11DE3 /* QuotesFactory.swift in Sources */,
