@@ -28,4 +28,8 @@ final class QuotesFactory {
         }
         return Array(quotes)
     }
+    
+    func removeAll() {
+        quotes.removeAll()
+    }
 }
