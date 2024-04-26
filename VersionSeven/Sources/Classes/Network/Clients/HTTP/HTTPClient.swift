@@ -22,8 +22,8 @@ final class HTTPClient {
             }
             let request = URLRequest(url: url)
             send(request: request, completion: completion)
-        } catch {
-            completion?(.failure(Errors.undefined))
+        } catch(let error) {
+            completion?(.failure(error))
         }
     }
     
