@@ -6,7 +6,7 @@ final class QuotesViewController: UIViewController {
     private lazy var tabloidView: TabloidView = {
         let view = TabloidView(style: .plain)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(cellIdentifiers: ["QuotesTabloidCellView"])
+        view.register(cellIdentifiers: ["QuoteTabloidCellView"])
         view.contentInsetAdjustmentBehavior = .never
         view.separatorStyle = .singleLine
         view.backgroundColor = .white
