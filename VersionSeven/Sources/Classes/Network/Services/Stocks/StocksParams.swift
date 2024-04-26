@@ -1,6 +1,6 @@
 import Foundation
 
-struct ParamsStocks: Codable {
+struct StocksParams: Codable {
     let type: String
     let exchange: String
     let gainers: Int
