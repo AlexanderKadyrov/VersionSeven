@@ -19,6 +19,7 @@
 		1121C7E42BDAFCA700C37C40 /* stocks.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121C7E32BDAFCA700C37C40 /* stocks.json */; };
 		1121C7E82BDAFD3A00C37C40 /* StocksFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121C7E72BDAFD3A00C37C40 /* StocksFactory.swift */; };
 		1141A0492BDC1DD900C11DE3 /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A0482BDC1DD900C11DE3 /* StocksService.swift */; };
+		1141A04B2BDC1E2800C11DE3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A04A2BDC1E2800C11DE3 /* HTTPClient.swift */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		1121C7E32BDAFCA700C37C40 /* stocks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stocks.json; sourceTree = "<group>"; };
 		1121C7E72BDAFD3A00C37C40 /* StocksFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksFactory.swift; sourceTree = "<group>"; };
 		1141A0482BDC1DD900C11DE3 /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
+		1141A04A2BDC1E2800C11DE3 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		1156A23E2BD448C60029DA44 /* VersionSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersionSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156A2412BD448C60029DA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156A2452BD448C60029DA44 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				1156A2602BD44E040029DA44 /* WebSocketClient.swift */,
+				1141A04A2BDC1E2800C11DE3 /* HTTPClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */,
 				1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
+				1141A04B2BDC1E2800C11DE3 /* HTTPClient.swift in Sources */,
 				1156A2882BD686770029DA44 /* LTP.swift in Sources */,
 				1156A2702BD479370029DA44 /* List.swift in Sources */,
 				1121C7CD2BD99FF200C37C40 /* ImageView.swift in Sources */,
