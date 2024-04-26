@@ -1,5 +1,6 @@
 import TabloidView
 import Foundation
+import UIKit
 
 protocol StocksViewModelDelegate: AnyObject {
     func set(stocks: Set<Stock>)
@@ -22,6 +23,7 @@ final class StocksViewModel {
     }
     
     func viewDidLoad() {
+        append(elements: [])
         let params = StocksParams(type: "stocks", exchange: "russia", gainers: .zero, limit: 30)
         let query = Query(cmd: "getTopSecurities", params: params)
         stocksService.fetch(query: query) { [weak self] result in
@@ -40,13 +42,13 @@ final class StocksViewModel {
     func actionUndo() {
         let items = stocks.map { Stock(ticker: $0.ticker, selected: false) }
         stocks = Set(items)
-        reload()
+        reload(animation: .none)
     }
     
     func actionRedo() {
         let items = stocks.map { Stock(ticker: $0.ticker, selected: true) }
         stocks = Set(items)
-        reload()
+        reload(animation: .none)
     }
     
     func actionDone() {
@@ -54,13 +56,16 @@ final class StocksViewModel {
     }
     
     private func append(elements: [Stock]) {
-        for element in elements {
-            stocks.insert(element)
+        for newValue in elements {
+            guard !stocks.contains(where: { $0.ticker == newValue.ticker }) else {
+                continue
+            }
+            stocks.insert(newValue)
         }
-        reload()
+        reload(animation: .fade)
     }
     
-    private func reload() {
+    private func reload(animation: UITableView.RowAnimation) {
         var elements: [StockTabloidCellViewModel] = []
         for stock in stocks {
             let cellViewModel = StockTabloidCellViewModel(stock: stock)
@@ -73,7 +78,7 @@ final class StocksViewModel {
         ]
         tabloidViewModel.reload(
             sections: sections,
-            animation: .none
+            animation: animation
         )
     }
 }
@@ -85,6 +90,6 @@ extension StocksViewModel: TabloidCellViewModelDelegate {
         let newStock = Stock(ticker: oldStock.ticker, selected: !oldStock.selected)
         stocks.remove(oldStock)
         stocks.insert(newStock)
-        reload()
+        reload(animation: .none)
     }
 }
