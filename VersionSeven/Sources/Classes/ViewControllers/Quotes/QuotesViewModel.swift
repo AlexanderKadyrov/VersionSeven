@@ -24,7 +24,7 @@ final class QuotesViewModel {
     }
     
     private func reload(quotes: [Quote]) {
-        let cellViewModels = quotes.map { QuotesTabloidCellViewModel(quote: $0) }
+        let cellViewModels = quotes.map { QuoteTabloidCellViewModel(quote: $0) }
         let sorted = cellViewModels.sorted(by: { $0.quote.c < $1.quote.c })
         let sections: [Section<TabloidCellViewModel>] = [
             Section(index: .zero, elements: sorted)
