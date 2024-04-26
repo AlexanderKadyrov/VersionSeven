@@ -137,6 +137,14 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		1141A04C2BDC259B00C11DE3 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				1141A04A2BDC1E2800C11DE3 /* HTTPClient.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		1156A2352BD448C60029DA44 = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +241,8 @@
 		1156A25F2BD44DE90029DA44 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				1141A04C2BDC259B00C11DE3 /* HTTP */,
 				1156A2602BD44E040029DA44 /* WebSocketClient.swift */,
-				1141A04A2BDC1E2800C11DE3 /* HTTPClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
