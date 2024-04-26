@@ -23,6 +23,7 @@
 		1141A04E2BDC25CE00C11DE3 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A04D2BDC25CE00C11DE3 /* Query.swift */; };
 		1141A0502BDC26E500C11DE3 /* StocksParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A04F2BDC26E500C11DE3 /* StocksParams.swift */; };
 		1141A0522BDC30B000C11DE3 /* StocksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A0512BDC30B000C11DE3 /* StocksResponse.swift */; };
+		1141A0542BDC3B3500C11DE3 /* QuotesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141A0532BDC3B3500C11DE3 /* QuotesFactory.swift */; };
 		1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2412BD448C60029DA44 /* AppDelegate.swift */; };
 		1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2452BD448C60029DA44 /* QuotesViewController.swift */; };
 		1156A24B2BD448C80029DA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156A24A2BD448C80029DA44 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		1141A04D2BDC25CE00C11DE3 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		1141A04F2BDC26E500C11DE3 /* StocksParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksParams.swift; sourceTree = "<group>"; };
 		1141A0512BDC30B000C11DE3 /* StocksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksResponse.swift; sourceTree = "<group>"; };
+		1141A0532BDC3B3500C11DE3 /* QuotesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesFactory.swift; sourceTree = "<group>"; };
 		1156A23E2BD448C60029DA44 /* VersionSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersionSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156A2412BD448C60029DA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156A2452BD448C60029DA44 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				1156A2672BD477FF0029DA44 /* QuotesService.swift */,
 				1156A26A2BD478320029DA44 /* QuotesRequest.swift */,
+				1141A0532BDC3B3500C11DE3 /* QuotesFactory.swift */,
 				1156A26C2BD4785C0029DA44 /* Quote.swift */,
 			);
 			path = Quotes;
@@ -406,6 +409,7 @@
 				1141A04E2BDC25CE00C11DE3 /* Query.swift in Sources */,
 				1121C7CD2BD99FF200C37C40 /* ImageView.swift in Sources */,
 				1156A2832BD5AB1F0029DA44 /* CHGView.swift in Sources */,
+				1141A0542BDC3B3500C11DE3 /* QuotesFactory.swift in Sources */,
 				1141A0522BDC30B000C11DE3 /* StocksResponse.swift in Sources */,
 				1141A0502BDC26E500C11DE3 /* StocksParams.swift in Sources */,
 				1121C7DD2BDAEA0B00C37C40 /* StockTabloidCellView.swift in Sources */,
