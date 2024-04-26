@@ -7,6 +7,7 @@ protocol StocksViewModelDelegate: AnyObject {
 
 final class StocksViewModel {
     
+    private let stocksService = StocksService()
     private var stocks: Set<Stock>
     
     weak var delegate: StocksViewModelDelegate?
@@ -22,6 +23,21 @@ final class StocksViewModel {
     
     func viewDidLoad() {
         reload()
+        
+        let params = ParamsStocks(type: "stocks", exchange: "russia", gainers: .zero, limit: 30)
+        let query = Query(cmd: "getTopSecurities", params: params)
+        
+        stocksService.fetch(query: query) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let elements):
+                DispatchQueue.main.async {
+                    self.append(elements: elements)
+                }
+            case .failure:
+                break
+            }
+        }
     }
     
     func actionUndo() {
@@ -38,6 +54,13 @@ final class StocksViewModel {
     
     func actionDone() {
         delegate?.set(stocks: stocks)
+    }
+    
+    private func append(elements: [Stock]) {
+        for element in elements {
+            stocks.insert(element)
+        }
+        reload()
     }
     
     private func reload() {
