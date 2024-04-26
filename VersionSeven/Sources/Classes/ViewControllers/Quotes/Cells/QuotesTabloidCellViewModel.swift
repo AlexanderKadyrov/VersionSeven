@@ -26,7 +26,7 @@ final class QuotesTabloidCellViewModel: TabloidCellViewModel {
     }
     
     override func isContentEqual(to source: TabloidCellViewModel) -> Bool {
-        guard let source = source as? QuotesTabloidCellViewModel else { return false }
+        guard let source = source as? Self else { return false }
         return source.quote == quote
     }
     
