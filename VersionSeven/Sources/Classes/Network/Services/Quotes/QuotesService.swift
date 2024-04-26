@@ -12,8 +12,8 @@ final class QuotesService {
         return client
     }()
     
+    private let factory = QuotesFactory()
     private var tickers: [String] = []
-    private var quotes = Set<Quote>()
     
     private var isConnected: Bool {
         return webSocketClient?.isConnected ?? false
@@ -23,7 +23,7 @@ final class QuotesService {
     
     func send(tickers: [String]) {
         self.tickers = tickers
-        quotes.removeAll()
+        factory.removeAll()
         if isConnected {
             let tickers = tickers.map({ "\"" + $0 + "\"" }).joined(separator: ",")
             let request = "[\"quotes\", [\(tickers)]]"
@@ -38,29 +38,8 @@ final class QuotesService {
 extension QuotesService: WebSocketClientDelegate {
     
     func didReceive(data: Data, webSocketClient: WebSocketClient) {
-        do {
-            let list = try JSONDecoder().decode([List<Quote>].self, from: data)
-            let result = list.compactMap { result in
-                if case let .object(value) = result {
-                    return value
-                }
-                return nil
-            }
-            
-            for newQuote in result {
-                if let oldQuote = quotes.first(where: { $0.c == newQuote.c }) {
-                    let mergedQuote = oldQuote.merged(with: newQuote)
-                    quotes.remove(oldQuote)
-                    quotes.insert(mergedQuote)
-                } else {
-                    quotes.insert(newQuote)
-                }
-            }
-            
-            delegate?.didReceive(quotes: Array(quotes))
-        } catch {
-            
-        }
+        let quotes = factory.quotes(data: data)
+        delegate?.didReceive(quotes: Array(quotes))
     }
     
     func didConnected(webSocketClient: WebSocketClient) {
