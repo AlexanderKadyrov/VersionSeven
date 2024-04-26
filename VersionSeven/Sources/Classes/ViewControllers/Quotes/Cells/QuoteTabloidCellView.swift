@@ -2,7 +2,7 @@ import TabloidView
 import Foundation
 import UIKit
 
-final class QuotesTabloidCellView: TabloidCellView {
+final class QuoteTabloidCellView: TabloidCellView {
     
     enum Constants {
         static let separatorInset = UIEdgeInsets(top: .zero, left: 12, bottom: .zero, right: .zero)
@@ -84,7 +84,7 @@ final class QuotesTabloidCellView: TabloidCellView {
     
     override var cellViewModel: TabloidCellViewModel? {
         didSet {
-            guard let cellViewModel = cellViewModel as? QuotesTabloidCellViewModel else { return }
+            guard let cellViewModel = cellViewModel as? QuoteTabloidCellViewModel else { return }
             cellViewModel.logoImageViewModel?.delegate = self
             logoImageView.viewModel = cellViewModel.logoImageViewModel
             pcpView.pcp = cellViewModel.quote.pcp
@@ -123,7 +123,7 @@ final class QuotesTabloidCellView: TabloidCellView {
     }
 }
 
-extension QuotesTabloidCellView: ImageViewModelDelegate {
+extension QuoteTabloidCellView: ImageViewModelDelegate {
     func didReceive(result: Result<UIImage, Error>) {
         switch result {
         case .success(let image):

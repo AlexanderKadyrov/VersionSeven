@@ -35,8 +35,8 @@
 		1156A2702BD479370029DA44 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A26F2BD479370029DA44 /* List.swift */; };
 		1156A2722BD58D170029DA44 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2712BD58D170029DA44 /* QuotesViewModel.swift */; };
 		1156A2752BD5911F0029DA44 /* TabloidView in Frameworks */ = {isa = PBXBuildFile; productRef = 1156A2742BD5911F0029DA44 /* TabloidView */; };
-		1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */; };
-		1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */; };
+		1156A2782BD5932B0029DA44 /* QuoteTabloidCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2772BD5932B0029DA44 /* QuoteTabloidCellView.swift */; };
+		1156A27A2BD593390029DA44 /* QuoteTabloidCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2792BD593390029DA44 /* QuoteTabloidCellViewModel.swift */; };
 		1156A27D2BD5A3550029DA44 /* LTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A27C2BD5A3550029DA44 /* LTPView.swift */; };
 		1156A27F2BD5A4D60029DA44 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A27E2BD5A4D60029DA44 /* CView.swift */; };
 		1156A2812BD5A5490029DA44 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156A2802BD5A5490029DA44 /* NameView.swift */; };
@@ -73,8 +73,8 @@
 		1156A26C2BD4785C0029DA44 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		1156A26F2BD479370029DA44 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		1156A2712BD58D170029DA44 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
-		1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellView.swift; sourceTree = "<group>"; };
-		1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabloidCellViewModel.swift; sourceTree = "<group>"; };
+		1156A2772BD5932B0029DA44 /* QuoteTabloidCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTabloidCellView.swift; sourceTree = "<group>"; };
+		1156A2792BD593390029DA44 /* QuoteTabloidCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTabloidCellViewModel.swift; sourceTree = "<group>"; };
 		1156A27C2BD5A3550029DA44 /* LTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTPView.swift; sourceTree = "<group>"; };
 		1156A27E2BD5A4D60029DA44 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
 		1156A2802BD5A5490029DA44 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
@@ -286,8 +286,8 @@
 		1156A2762BD593060029DA44 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1156A2792BD593390029DA44 /* QuotesTabloidCellViewModel.swift */,
-				1156A2772BD5932B0029DA44 /* QuotesTabloidCellView.swift */,
+				1156A2792BD593390029DA44 /* QuoteTabloidCellViewModel.swift */,
+				1156A2772BD5932B0029DA44 /* QuoteTabloidCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 			files = (
 				1121C7D82BD9D89B00C37C40 /* StocksViewController.swift in Sources */,
 				1156A2812BD5A5490029DA44 /* NameView.swift in Sources */,
-				1156A27A2BD593390029DA44 /* QuotesTabloidCellViewModel.swift in Sources */,
+				1156A27A2BD593390029DA44 /* QuoteTabloidCellViewModel.swift in Sources */,
 				1156A2462BD448C60029DA44 /* QuotesViewController.swift in Sources */,
 				1156A2422BD448C60029DA44 /* AppDelegate.swift in Sources */,
 				1141A04B2BDC1E2800C11DE3 /* HTTPClient.swift in Sources */,
@@ -424,7 +424,7 @@
 				1156A2852BD5AC190029DA44 /* PCPView.swift in Sources */,
 				1121C7D52BD9C87600C37C40 /* NavigationController.swift in Sources */,
 				1121C7CF2BD9A00100C37C40 /* ImageViewModel.swift in Sources */,
-				1156A2782BD5932B0029DA44 /* QuotesTabloidCellView.swift in Sources */,
+				1156A2782BD5932B0029DA44 /* QuoteTabloidCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

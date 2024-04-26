@@ -1,11 +1,11 @@
 import TabloidView
 import Foundation
 
-final class QuotesTabloidCellViewModel: TabloidCellViewModel {
+final class QuoteTabloidCellViewModel: TabloidCellViewModel {
     
     enum Constants {
         static let path = "https://tradernet.com/logos/get-logo-by-ticker?ticker="
-        static let cellIdentifier = "QuotesTabloidCellView"
+        static let cellIdentifier = "QuoteTabloidCellView"
     }
     
     override var differenceIdentifier: String {
