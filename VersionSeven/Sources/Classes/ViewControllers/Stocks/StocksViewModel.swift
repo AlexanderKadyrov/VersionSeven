@@ -22,7 +22,7 @@ final class StocksViewModel {
     }
     
     func viewDidLoad() {
-        let params = ParamsStocks(type: "stocks", exchange: "russia", gainers: .zero, limit: 30)
+        let params = StocksParams(type: "stocks", exchange: "russia", gainers: .zero, limit: 30)
         let query = Query(cmd: "getTopSecurities", params: params)
         stocksService.fetch(query: query) { [weak self] result in
             guard let self = self else { return }
