@@ -8,7 +8,7 @@ final class StocksService {
     
     private let httpClient = HTTPClient()
     
-    func fetch(query: Query<ParamsStocks>, completion: ((Result<[Stock], Error>) -> ())?) {
+    func fetch(query: Query<StocksParams>, completion: ((Result<[Stock], Error>) -> ())?) {
         httpClient.send(source: Constants.source, query: query) { result in
             switch result {
             case .success(let data):
